@@ -7,7 +7,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sign-in-up-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-up-page {
+  width: 300px;
+  margin: auto;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input-error-message {
+  color: red;
+  display: none;
+}
+
+.invalid+.input-error-message {
+  display: block;
 }
