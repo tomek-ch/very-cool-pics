@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 
 function Form({ submitCallback, children }) {
+    const [ formError, setFormError ] = useState('');
     const [ formData, setFormData ] = useState({
         email: {
             valid: false,
             value: '',
             blurred: false,
-            error: '',
+            error: 'Please enter your email address.',
         },
         username: {
             valid: false,
             value: '',
             blurred: false,
-            error: '',
+            error: 'Please enter a username.',
         },
         password: {
             valid: false,
             value: '',
             blurred: false,
-            error: '',
+            error: 'Please enter your password.',
         },
     });
 
@@ -35,19 +36,25 @@ function Form({ submitCallback, children }) {
             if (!value.length) {
                 return 'Please enter your password.';
             }
-            if (value.length < 5) {
-                return 'Password must be at least 5 characters long.';
+            if (value.length < 6) {
+                return 'Password must be at least 6 characters long.';
             }
             return '';
         } else if (type === 'username') {
             if (!value.length) {
                 return 'Please enter a username.';
             }
-            if (value.length < 4) {
-                return 'Username must be at least 4 characters long.';
+            if (value.length < 3) {
+                return 'Username must be at least 3 characters long.';
+            }
+            if (value.length > 10) {
+                return 'Username can\'t be longer than 10 characters.';
+            }
+            if (!/^\w+$/i.test(value)) {
+                return 'Username can only contain letters, numbers and underscores.';
             }
             if (value === 'andrzej') {
-                return 'Username already exists. Choose a different one.'
+                return 'Username already exists. Choose a different one.';
             }
             return '';
         }
@@ -91,7 +98,21 @@ function Form({ submitCallback, children }) {
             return newFormData;
         });
 
-        submitCallback(formData);
+        submitCallback(formData).catch(error => {
+            if (error.code === 'auth/wrong-password') {
+                setFormError('Provided password is incorrect.');
+            } else if (error.code === 'auth/user-not-found') {
+                setFormError('User doesn\'t exist.');
+            } else if (error.code === 'auth/email-already-in-use') {
+                setFormError('An account with this email address already exists.');
+            } else if (error.code === 'auth/too-many-requests') {
+                setFormError('Too many requests. Wait a few seconds and try again.');
+            } else if (error.code === 'Username taken.') {
+                setFormError('This username is already taken.')
+            } else {
+                setFormError(error.message);
+            }
+        });
     };
 
     return (
@@ -106,6 +127,9 @@ function Form({ submitCallback, children }) {
                     child
                 )
             )}
+            <div className="form-error">
+                {formError}
+            </div>
         </form>
     );
 }

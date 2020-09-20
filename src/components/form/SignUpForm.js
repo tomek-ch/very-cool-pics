@@ -4,18 +4,27 @@ import Form from './Form';
 import EmailInput from './EmailInput';
 import PasswordInput from './PasswordInput';
 import UsernameInput from './UsernameInput';
+import { auth, db } from '../../firebase';
 
 function SignUpForm() {
-    const submitCallback = FormData => {
-        if (FormData.email.valid && FormData.password.valid && FormData.username.valid) {
-            console.log('registered!')
-        } else {
-            console.log('not registered!')
+    const signUp = async ({ email, password, username }) => {
+
+        if (email.valid && password.valid && username.valid) {
+
+            const isUsernameTaken = await db.collection('Users').where('username', '==', username.value).get();
+            // console.log(isUsernameTaken.docs.length)
+            if (isUsernameTaken.docs.length) throw { code: 'Username taken.' };
+            // throw { code: 'Username taken.' }
+
+            const { user } = await auth.createUserWithEmailAndPassword(email.value, password.value);
+            await db.collection('Users').doc(user.uid).set({
+                username: username.value,
+            });
         }
     }
 
     return (
-        <Form submitCallback={submitCallback}>
+        <Form submitCallback={signUp}>
             <EmailInput />
             <PasswordInput />
             <UsernameInput />

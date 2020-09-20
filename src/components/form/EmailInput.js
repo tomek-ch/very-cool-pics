@@ -4,7 +4,7 @@ function EmailInput({ handleChange, handleBlur, formData }) {
     return (
         <>
             <label htmlFor="email">
-                E-mail address:
+                Email address:
             </label>
             <input
                 type="email"

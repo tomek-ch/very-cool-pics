@@ -1,15 +1,14 @@
 import React from 'react';
 
+import { auth } from '../../firebase';
 import Form from './Form';
 import EmailInput from './EmailInput';
 import PasswordInput from './PasswordInput';
 
 function SignInForm() {
-    const submitCallback = FormData => {
-        if (FormData.email.valid && FormData.password.valid) {
-            console.log('logged in!')
-        } else {
-            console.log('not logged in!')
+    const submitCallback = async ({ email, password }) => {
+        if (email.valid && password.valid) {
+            await auth.signInWithEmailAndPassword(email.value, password.value);
         }
     }
 

@@ -9,6 +9,7 @@ function UserNameInput({ handleChange, handleBlur, formData }) {
             <input
                 type="text"
                 name="username"
+                autoComplete="off"
                 required
                 value={formData.username.value}
                 onChange={handleChange}
