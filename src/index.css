@@ -50,6 +50,7 @@ input:focus {
 
 .user-info {
   display: flex;
+  justify-content: space-between;
 }
 
 .info-profile-pic {
@@ -72,4 +73,19 @@ input:focus {
 .form-error {
   color: red;
   font-weight: 500;
+}
+
+/* .profile-pic-section {
+  width: fit-content;
+  height: fit-content;
+} */
+
+.change-pfp-form {
+  position: relative;
+}
+
+.image-input {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
 }

@@ -11,18 +11,24 @@ function UserProfile() {
     const { username } = useParams();
     const isThisCurrentUsersProfile = currentUser.username === username;
 
-    // const [ user, setUser ] = useState({});
+    const [ user, setUser ] = useState({});
 
-    // useEffect(() => {
-    //     const getUser = async () => {
+    useEffect(() => {
+        const ref =  db.collection('Users').where('username', '==', username);
 
-    //         setUser((await db
-    //             .collection('Users')
-    //             .where('username', '==', username)
-    //             .get()).docs[0].data());
-    //     }
-    //     getUser();
-    // }, [username]);
+        const unsubscribe = ref.onSnapshot(snapshot => {
+            const userDoc = snapshot.docs[0];
+
+            setUser({
+                id: userDoc.id,
+                ...userDoc.data(),
+            });
+
+        });
+        
+        return unsubscribe;
+    }, [username]);
+    console.log(user);
 
     
     return (
@@ -30,6 +36,8 @@ function UserProfile() {
             <UserInfo
                 isThisCurrentUsersProfile={isThisCurrentUsersProfile}
                 username={username}
+                pic={user.profilePic}
+                userId={user.id}
             />
         </div>
     );

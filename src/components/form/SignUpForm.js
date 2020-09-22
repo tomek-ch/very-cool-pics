@@ -13,7 +13,11 @@ function SignUpForm() {
 
             const isUsernameTaken = await db.collection('Users').where('username', '==', username.value).get();
             // console.log(isUsernameTaken.docs.length)
-            if (isUsernameTaken.docs.length) throw { code: 'Username taken.' };
+            if (isUsernameTaken.docs.length) {
+                const error = new Error();
+                error.code = 'Username taken.';
+                throw error;
+            };
             // throw { code: 'Username taken.' }
 
             const { user } = await auth.createUserWithEmailAndPassword(email.value, password.value);

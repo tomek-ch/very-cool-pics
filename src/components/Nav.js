@@ -14,6 +14,9 @@ function Nav() {
             <Link to="/explore">
                 Explore
             </Link>
+            <div>
+               Add 
+            </div>
             <Link to={currentUser.username}>
                 Me
             </Link>
