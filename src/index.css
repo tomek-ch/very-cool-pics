@@ -75,11 +75,6 @@ input:focus {
   font-weight: 500;
 }
 
-/* .profile-pic-section {
-  width: fit-content;
-  height: fit-content;
-} */
-
 .change-pfp-form {
   position: relative;
 }
@@ -88,4 +83,20 @@ input:focus {
   position: absolute;
   width: 100%;
   opacity: 0;
+}
+
+.profile-picture {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  background-color: lightgray;
+  overflow: hidden;
+}
+
+.profile-picture img {
+  width: 100%;
+}
+
+.search-result {
+  display: flex;
 }

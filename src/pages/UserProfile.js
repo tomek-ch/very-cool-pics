@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { db } from '../firebase';
 import { Context } from '../Context';
-import UserInfo from '../components/UserInfo';
+import UserInfo from '../components/user-profile/UserInfo';
 
 function UserProfile() {
     
@@ -28,7 +28,6 @@ function UserProfile() {
         
         return unsubscribe;
     }, [username]);
-    console.log(user);
 
     
     return (

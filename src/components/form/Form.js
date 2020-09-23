@@ -67,7 +67,7 @@ function Form({ submitCallback, children }) {
         setFormData(prevData => ({
             ...prevData,
             [name]: {
-                value,
+                value: name === 'username' ? value.toLowerCase() : value,
                 error: error,
                 valid: !error.length,
                 blurred: prevData[name].blurred,

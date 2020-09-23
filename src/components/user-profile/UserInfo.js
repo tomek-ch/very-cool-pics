@@ -14,14 +14,16 @@ function UserInfo({ isThisCurrentUsersProfile, username, pic, userId }) {
                         alt={username}
                     />
                 </div>
-                {isThisCurrentUsersProfile ? <ChangeProfilePicButton userId={userId} /> : <FollowButton />}
+                {isThisCurrentUsersProfile ?
+                <ChangeProfilePicButton userId={userId} /> :
+                <FollowButton pic={pic} username={username} idToFollow={userId} />}
             </div>
             <div className="info-username">
                 {username}
             </div>
             {isThisCurrentUsersProfile ? <SignOutButton /> : ''}
         </div>
-    )
+    );
 }
 
 export default UserInfo;

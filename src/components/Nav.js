@@ -21,7 +21,7 @@ function Nav() {
                 Me
             </Link>
         </nav>
-    )
+    );
 }
 
 export default Nav;

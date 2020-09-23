@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { storage, db } from '../firebase';
+import { storage, db } from '../../firebase';
 
 function ChangeProfilePicButton({ userId }) {
 
@@ -43,7 +43,7 @@ function ChangeProfilePicButton({ userId }) {
                 ref={fileInput}
             />
         </form>
-    )
+    );
 }
 
 export default ChangeProfilePicButton;

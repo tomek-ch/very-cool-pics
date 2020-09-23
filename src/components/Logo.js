@@ -5,7 +5,7 @@ function Logo() {
         <h1 className="logo">
             very cool pics
         </h1>
-    )
+    );
 }
 
 export default Logo;

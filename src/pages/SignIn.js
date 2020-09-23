@@ -11,7 +11,7 @@ function SignIn() {
             <SignInForm />
             <SignUpCTA />
         </div>
-    )
+    );
 }
 
 export default SignIn;

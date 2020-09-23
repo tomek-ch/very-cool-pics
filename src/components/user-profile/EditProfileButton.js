@@ -5,7 +5,7 @@ function EditProfileButton() {
         <button className="edit-profile-button">
             Edit profile
         </button>
-    )
+    );
 }
 
 export default EditProfileButton;

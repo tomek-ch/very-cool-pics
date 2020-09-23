@@ -34,7 +34,7 @@ function ContextProvider({ children }) {
         }}>
             {children}
         </Context.Provider>
-    )
+    );
 }
 
 export { Context, ContextProvider };

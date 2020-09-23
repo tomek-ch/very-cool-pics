@@ -9,7 +9,7 @@ function SignUpCTA() {
                 Sign up
             </Link>
         </div>
-    )
+    );
 }
 
 export default SignUpCTA;

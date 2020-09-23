@@ -22,7 +22,7 @@ function MainPage() {
                 </Route>
             </Switch>
         </div>
-    )
+    );
 }
 
 export default MainPage;

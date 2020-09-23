@@ -9,7 +9,7 @@ function SignInCTA() {
                 Sign in
             </Link>
         </div>
-    )
+    );
 }
 
 export default SignInCTA;
