@@ -44,6 +44,7 @@ function SearchResults({ searchedText }) {
     return (
         <div className="search-results">
             {results}
+            {!results.length ? 'Nothing here' : ''}
         </div>
     );
 }
