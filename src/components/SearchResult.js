@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SearchResult({ name, pic }) {
-    console.log('rendered ' + name)
     return (
         <Link to={name} className="search-result">
             <div className="profile-picture">
