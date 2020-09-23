@@ -8,7 +8,7 @@ function UserInfo({ isThisCurrentUsersProfile, username, pic, userId }) {
     return (
         <div className="user-info">
             <div className="profile-pic-section">
-                <div className="info-profile-pic">
+                <div className="profile-picture">
                     <img
                         src={pic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
                         alt={username}

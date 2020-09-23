@@ -53,18 +53,6 @@ input:focus {
   justify-content: space-between;
 }
 
-.info-profile-pic {
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  background-color: lightgray;
-  overflow: hidden;
-}
-
-.info-profile-pic img {
-  width: 100%;
-}
-
 .info-username {
   font-size: 2em;
   margin: 0 0.3em;
