@@ -6,6 +6,7 @@ const Context = createContext();
 
 function ContextProvider({ children }) {
     const [ currentUser, setCurrentUser ] = useState(null);
+    const [ followedUsers, setFollowedUsers ] = useState([]);
 
     useEffect(() => {
         const authStateObserver = user => {
@@ -17,6 +18,7 @@ function ContextProvider({ children }) {
                         id: uid,
                         username: doc.data().username,
                     }));
+
                     unsubscribe();
                 });
             } else {
@@ -27,10 +29,23 @@ function ContextProvider({ children }) {
         auth.onAuthStateChanged(authStateObserver);
     }, []);
 
+    useEffect(() => {
+        if (currentUser) {
+            db.collection('Users').doc(currentUser.id).collection('following').onSnapshot(snapshot => {
+                const followedList = [];
+                for (let doc of snapshot.docs) followedList.push(doc.data());
+                setFollowedUsers(followedList);
+            });
+        } else {
+            setFollowedUsers([]);
+        }
+    }, [currentUser]);
+
     console.log(currentUser)
     return (
         <Context.Provider value={{
             currentUser,
+            followedUsers,
         }}>
             {children}
         </Context.Provider>

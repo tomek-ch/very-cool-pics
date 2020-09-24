@@ -7,9 +7,11 @@ import UserInfo from '../components/user-profile/UserInfo';
 
 function UserProfile() {
     
-    const { currentUser } = useContext(Context);
+    const { currentUser, followedUsers } = useContext(Context);
     const { username } = useParams();
+    
     const isThisCurrentUsersProfile = currentUser.username === username;
+    const isUserFollowed = followedUsers.find(user => user.username === username);
 
     const [ user, setUser ] = useState({});
 
@@ -37,6 +39,7 @@ function UserProfile() {
                 username={username}
                 pic={user.profilePic}
                 userId={user.id}
+                isUserFollowed={isUserFollowed}
             />
         </div>
     );

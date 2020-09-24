@@ -4,7 +4,7 @@ import FollowButton from './FollowButton'
 import SignOutButton from './SignOutButton';
 import ChangeProfilePicButton from './ChangeProfilePicButton';
 
-function UserInfo({ isThisCurrentUsersProfile, username, pic, userId }) {
+function UserInfo({ isThisCurrentUsersProfile, isUserFollowed, username, pic, userId }) {
     return (
         <div className="user-info">
             <div className="profile-pic-section">
@@ -16,7 +16,12 @@ function UserInfo({ isThisCurrentUsersProfile, username, pic, userId }) {
                 </div>
                 {isThisCurrentUsersProfile ?
                 <ChangeProfilePicButton userId={userId} /> :
-                <FollowButton pic={pic} username={username} idToFollow={userId} />}
+                <FollowButton
+                    pic={pic}
+                    username={username}
+                    idToFollow={userId}
+                    isUserFollowed={isUserFollowed}
+                />}
             </div>
             <div className="info-username">
                 {username}
