@@ -55,6 +55,7 @@ function UserProfile() {
                 isThisCurrentUsersProfile={isThisCurrentUsersProfile}
                 username={username}
                 pic={user.profilePic}
+                bio={user.bio}
                 userId={user.id}
                 isUserFollowed={isUserFollowed}
             />
