@@ -61,6 +61,7 @@ function UserProfile() {
             <FollowersSection
                 following={user.following || []}
                 followers={user.followers || []}
+                posts={user.posts || []}
             />
         </div>
     );
