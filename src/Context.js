@@ -6,7 +6,7 @@ const Context = createContext();
 
 function ContextProvider({ children }) {
     const [ currentUser, setCurrentUser ] = useState(null);
-    const [ followedUsers, setFollowedUsers ] = useState([]);
+    // const [ followedUsers, setFollowedUsers ] = useState([]);
 
     useEffect(() => {
         const authStateObserver = user => {
@@ -14,12 +14,17 @@ function ContextProvider({ children }) {
                 const { uid } = user;
 
                 const unsubscribe = db.collection('Users').doc(uid).onSnapshot(doc => {
+                    const { username, following, followers } = doc.data();
+
                     setCurrentUser(() => ({
                         id: uid,
-                        username: doc.data().username,
+                        username: username,
+                        following: following || [],
+                        followers: followers || [],
                     }));
 
-                    unsubscribe();
+                    // unsubscribe();
+                    return unsubscribe;
                 });
             } else {
                 setCurrentUser(null);
@@ -29,23 +34,20 @@ function ContextProvider({ children }) {
         auth.onAuthStateChanged(authStateObserver);
     }, []);
 
-    useEffect(() => {
-        if (currentUser) {
-            db.collection('Users').doc(currentUser.id).collection('following').onSnapshot(snapshot => {
-                const followedList = [];
-                for (let doc of snapshot.docs) followedList.push(doc.data());
-                setFollowedUsers(followedList);
-            });
-        } else {
-            setFollowedUsers([]);
-        }
-    }, [currentUser]);
-
-    console.log(currentUser)
+    // useEffect(() => {
+    //     if (currentUser) {
+    //         db.collection('Users').doc(currentUser.id).collection('following').onSnapshot(snapshot => {
+    //             const followedArr = [];
+    //             for (let doc of snapshot.docs) followedArr.push(doc.data());
+    //             setFollowedUsers(followedArr);
+    //         });
+    //     } else {
+    //         setFollowedUsers([]);
+    //     }
+    // }, [currentUser]);
     return (
         <Context.Provider value={{
             currentUser,
-            followedUsers,
         }}>
             {children}
         </Context.Provider>

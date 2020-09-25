@@ -4,16 +4,18 @@ import { useParams } from 'react-router-dom';
 import { db } from '../firebase';
 import { Context } from '../Context';
 import UserInfo from '../components/user-profile/UserInfo';
+import FollowersSection from '../components/user-profile/FollowersSection';
 
 function UserProfile() {
     
-    const { currentUser, followedUsers } = useContext(Context);
+    const { currentUser } = useContext(Context);
     const { username } = useParams();
     
     const isThisCurrentUsersProfile = currentUser.username === username;
-    const isUserFollowed = followedUsers.find(user => user.username === username);
-
+    
     const [ user, setUser ] = useState({});
+    // const [ following, setFollowing ] = useState([]);
+    // const [ followers, setFollowers ] = useState([]);
 
     useEffect(() => {
         const ref =  db.collection('Users').where('username', '==', username);
@@ -21,15 +23,30 @@ function UserProfile() {
         const unsubscribe = ref.onSnapshot(snapshot => {
             const userDoc = snapshot.docs[0];
 
-            setUser({
-                id: userDoc.id,
-                ...userDoc.data(),
-            });
-
+            if (userDoc) {
+                setUser({
+                    id: userDoc.id,
+                    ...userDoc.data(),
+                });
+            }
         });
         
         return unsubscribe;
     }, [username]);
+
+    const isUserFollowed = currentUser.following.includes(user.id);
+
+    // useEffect(() => {
+    //     if (user) {
+    //         db.collection('Users').doc(user.id).collection('following')
+    //     }
+
+    //     db.collection('Users').doc(userDoc.id).collection('following').get().then(snapshot => {
+    //         const followingArr = [];
+    //         for (let doc of snapshot.docs) followingArr.push(doc.data());
+    //         setFollowing(followingArr);
+    //     });
+    // }, [user]);
 
     
     return (
@@ -40,6 +57,10 @@ function UserProfile() {
                 pic={user.profilePic}
                 userId={user.id}
                 isUserFollowed={isUserFollowed}
+            />
+            <FollowersSection
+                following={user.following || []}
+                followers={user.followers || []}
             />
         </div>
     );

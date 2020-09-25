@@ -88,3 +88,8 @@ input:focus {
 .search-result {
   display: flex;
 }
+
+.followers-section {
+  display: flex;
+  justify-content: space-between;
+}
