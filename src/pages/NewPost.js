@@ -20,14 +20,17 @@ function NewPost() {
         const file = fileInput.current.files[0];
         
         if (file) {
+            const { id, username, profilePic } = currentUser;
             const filePath = `posts/${currentUser.id}/${file.name}`;
             const fileSnapshot = await storage.ref(filePath).put(file);
-    
+            
             const url = await fileSnapshot.ref.getDownloadURL();
             db.collection('Posts').add({
                 imgUrl: url,
                 caption: text,
-                author: currentUser.id,
+                authorId: id,
+                authorUsername: username,
+                authorProfilePic: profilePic,
             });
 
             history.push('/');
