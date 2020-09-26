@@ -5,6 +5,7 @@ import { db } from '../firebase';
 import { Context } from '../Context';
 import UserInfo from '../components/user-profile/UserInfo';
 import FollowersSection from '../components/user-profile/FollowersSection';
+import UserPosts from '../components/user-profile/UserPosts';
 
 function UserProfile() {
     
@@ -64,6 +65,7 @@ function UserProfile() {
                 followers={user.followers || []}
                 posts={user.posts || []}
             />
+            <UserPosts userId={user.id} />
         </div>
     );
 }
