@@ -38,9 +38,9 @@ function FollowButton({ idToFollow, isUserFollowed }) {
     };
 
     return (
-        <div className="follow-button" onClick={switchFollow}>
+        <button className="follow-button" onClick={switchFollow}>
             { isUserFollowed ? 'Unfollow' : 'Follow' }
-        </div>
+        </button>
     );
 }
 

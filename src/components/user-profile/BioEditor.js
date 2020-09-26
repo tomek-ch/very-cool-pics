@@ -9,7 +9,7 @@ function BioEditor({ text, userId }) {
     const handleChange = e => {
         const { value } = e.target;
         setValue(value);
-    }
+    };
 
     const edit = () => {
         setIsBeingEdited(true);

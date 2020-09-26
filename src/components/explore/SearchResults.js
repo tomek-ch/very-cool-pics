@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { db } from '../firebase';
+import { db } from '../../firebase';
 import SearchResult from './SearchResult';
 
 function SearchResults({ searchedText }) {

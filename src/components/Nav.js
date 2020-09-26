@@ -14,9 +14,9 @@ function Nav() {
             <Link to="/explore">
                 Explore
             </Link>
-            <div>
-               Add 
-            </div>
+            <Link to="/new-post">
+               Add
+            </Link>
             <Link to={currentUser.username}>
                 Me
             </Link>
