@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { db } from '../firebase';
+import PostSection from '../components/post/PostSection';
 
 function Post() {
     const { postId, username } = useParams();
@@ -14,23 +15,12 @@ function Post() {
     }, [postId]);
 
     return (
-        <div className="post">
-            <Link to={`/${username}`} className="post-author">
-                <div className="profile-picture">
-                    <img
-                        src={post.authorProfilePic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
-                        alt={post.authorUsername}
-                    />
-                </div>
-                {post.authorUsername}
-            </Link>
-            <div className="post-image">
-                <div className="post-image-inner" style={{backgroundImage: `url(${post.imgUrl})`}}></div>
-            </div>
-            <div className="post-caption">
-                {post.caption}
-            </div>
-        </div>
+        <PostSection
+            username={username}
+            profilePic={post.authorProfilePic}
+            postImg={post.imgUrl}
+            caption={post.caption}
+        />
     );
 }
 

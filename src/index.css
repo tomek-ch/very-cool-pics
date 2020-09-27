@@ -126,8 +126,9 @@ input:focus {
   grid-auto-rows: 1fr;
 }
 
-.explore-grid::before, .user-posts::before {
+.post-thumbnail::before {
   content: '';
+  display: block;
   width: 0;
   padding-bottom: 100%;
   grid-row: 1 / 1;

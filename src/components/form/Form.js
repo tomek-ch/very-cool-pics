@@ -47,8 +47,8 @@ function Form({ submitCallback, children }) {
             if (value.length < 3) {
                 return 'Username must be at least 3 characters long.';
             }
-            if (value.length > 10) {
-                return 'Username can\'t be longer than 10 characters.';
+            if (value.length > 13) {
+                return 'Username can\'t be longer than 13 characters.';
             }
             if (!/^\w+$/i.test(value)) {
                 return 'Username can only contain letters, numbers and underscores.';
