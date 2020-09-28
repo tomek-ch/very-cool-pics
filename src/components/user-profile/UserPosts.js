@@ -27,7 +27,7 @@ function UserPosts({ userId }) {
             className="post-thumbnail"
             style={{backgroundImage: `url(${post.imgUrl})`}}
             key={post.id}
-        ></Link>
+        />
     ));
 
     return (

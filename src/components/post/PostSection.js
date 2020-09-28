@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import DeletePostButton from './DeletePostButton';
 import LikeButton from './LikeButton';
+import CommentsLink from './CommentsLink';
 import { Context } from '../../Context';
 
 function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl, caption, likes } }) {
@@ -27,10 +28,11 @@ function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl,
             <div className="post-caption">
                 {caption}
             </div>
-            <LikeButton postId={postId} />
             <div className="number-of-likes">
-                {likes || 0}
+                {likes || 0} {likes === 1 ? 'like' : 'likes'}
             </div>
+            <LikeButton postId={postId} />
+            <CommentsLink username={authorUsername} postId={postId} />
         </div>
     );
 }

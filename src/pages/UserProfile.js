@@ -50,7 +50,6 @@ function UserProfile() {
     //     });
     // }, [user]);
 
-    
     return (
         <div className="user-profile" >
             <UserInfo

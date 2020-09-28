@@ -17,7 +17,7 @@ function Nav() {
             <Link to="/new-post">
                Add
             </Link>
-            <Link to={currentUser.username}>
+            <Link to={`/${currentUser.username}`}>
                 Me
             </Link>
         </nav>

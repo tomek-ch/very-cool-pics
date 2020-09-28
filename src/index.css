@@ -149,3 +149,20 @@ input:focus {
 .post-author {
   display: flex;
 }
+
+.comments-header {
+  display: flex;
+}
+
+.comments-heading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment-editor {
+  display: flex;
+}
+
+.comment {
+  display: flex;
+}
