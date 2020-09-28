@@ -5,7 +5,7 @@ import { db } from '../firebase';
 import PostSection from '../components/post/PostSection';
 
 function Post() {
-    const { postId, username } = useParams();
+    const { postId } = useParams();
     const [ post, setPost ] = useState({});
     
     useEffect(() => {
@@ -16,11 +16,12 @@ function Post() {
 
     return (
         <PostSection
-            username={username}
-            profilePic={post.authorProfilePic}
-            postImg={post.imgUrl}
-            caption={post.caption}
+            // username={username}
+            // profilePic={post.authorProfilePic}
+            // postImg={post.imgUrl}
+            // caption={post.caption}
             postId={postId}
+            post={post}
         />
     );
 }

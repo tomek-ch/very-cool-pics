@@ -23,10 +23,11 @@ function Feed() {
         <PostSection
             key={post.id}
             postId={post.id}
-            username={post.authorUsername}
-            profilePic={post.authorProfilePic}
-            postImg={post.imgUrl}
-            caption={post.caption}
+            // username={post.authorUsername}
+            // profilePic={post.authorProfilePic}
+            // postImg={post.imgUrl}
+            // caption={post.caption}
+            post={post}
         />
     ));
 

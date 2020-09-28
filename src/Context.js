@@ -14,14 +14,14 @@ function ContextProvider({ children }) {
                 const { uid } = user;
 
                 const unsubscribe = db.collection('Users').doc(uid).onSnapshot(doc => {
-                    const { username, profilePic, following, followers } = doc.data();
+                    const { following, followers, likedPosts } = doc.data();
 
                     setCurrentUser(() => ({
                         id: uid,
-                        username,
-                        profilePic,
+                        ...doc.data(),
                         following: following || [],
                         followers: followers || [],
+                        likedPosts: likedPosts || [],
                     }));
 
                     // unsubscribe();
