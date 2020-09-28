@@ -16,6 +16,7 @@ function UserProfile() {
     const isThisCurrentUsersProfile = currentUser.username === username;
     
     const [ user, setUser ] = useState({});
+    const [ postCount, setPostCount ] = useState(0);
     // const [ following, setFollowing ] = useState([]);
     // const [ followers, setFollowers ] = useState([]);
 
@@ -59,17 +60,22 @@ function UserProfile() {
                 userId={user.id}
                 isUserFollowed={isUserFollowed}
             />
-            {isThisCurrentUsersProfile ?
-            <BioEditor text={user.bio} userId={user.id} /> :
-            <div className="bio">
-                {user.bio}    
-            </div>}
+            {
+                isThisCurrentUsersProfile ?
+                <BioEditor text={user.bio} userId={user.id} /> :
+                <div className="bio">
+                    {user.bio}    
+                </div>
+            }
             <FollowersSection
                 following={user.following || []}
                 followers={user.followers || []}
-                posts={user.posts || []}
+                postCount={postCount}
             />
-            <UserPosts userId={user.id} />
+            <UserPosts
+                userId={user.id}
+                setPostCount={setPostCount}
+            />
         </div>
     );
 }

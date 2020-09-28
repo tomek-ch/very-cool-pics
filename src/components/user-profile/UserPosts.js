@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { db } from '../../firebase';
 
-function UserPosts({ userId }) {
+function UserPosts({ userId, setPostCount }) {
     const [ posts, setPosts ] = useState([]);
 
     useEffect(() => {
@@ -16,10 +16,11 @@ function UserPosts({ userId }) {
                     author: post.data().authorUsername,
                 }));
                 setPosts(postsArr);
+                setPostCount(postsArr.length);
             });
         }
         
-    }, [userId]);
+    }, [userId, setPostCount]);
 
     const postsElements = posts.map(post => (
         <Link

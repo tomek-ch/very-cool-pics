@@ -1,10 +1,9 @@
 import React from 'react';
 
-function FollowersSection({ posts, followers, following }) {
+function FollowersSection({ postCount, followers, following }) {
 
     const followingCount = following.length;
     const followerCount = followers.length;
-    const postCount = posts.length;
 
     return (
         <div className="followers-section">
@@ -13,7 +12,7 @@ function FollowersSection({ posts, followers, following }) {
                     {postCount}
                 </div>
                 <div>
-                    posts
+                    { postCount === 1 ? 'post' : 'posts'}
                 </div>
             </div>
             <div className="followers-count">
@@ -21,7 +20,7 @@ function FollowersSection({ posts, followers, following }) {
                     {followerCount}
                 </div>
                 <div>
-                    followers
+                    {followerCount === 1 ? 'follower' : 'followers'}
                 </div>
             </div>
             <div className="following-count">
