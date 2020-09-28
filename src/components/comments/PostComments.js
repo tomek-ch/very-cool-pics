@@ -7,7 +7,7 @@ function PostComments({ postId }) {
     const [ comments, setComments ] = useState([]);
 
     useEffect(() => {
-        const ref = db.collection('Posts').doc(postId).collection('comments');
+        const ref = db.collection('Posts').doc(postId).collection('comments').orderBy('timestamp');
 
         const unsubscribe = ref.onSnapshot(snapshot => {
             const comments = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
