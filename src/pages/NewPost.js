@@ -1,7 +1,7 @@
 import React, { useRef, useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { db, storage } from '../firebase';
+import { db, FieldValue, storage } from '../firebase';
 import { Context } from '../Context';
 
 function NewPost() {
@@ -21,11 +21,14 @@ function NewPost() {
         
         if (file) {
             const { id, username, profilePic } = currentUser;
-            const filePath = `posts/${currentUser.id}/${file.name}`;
+            const docId = db.collection('Posts').doc().id;
+
+            const filePath = `posts/${currentUser.id}/${docId}`;
             const fileSnapshot = await storage.ref(filePath).put(file);
-            
             const url = await fileSnapshot.ref.getDownloadURL();
-            db.collection('Posts').add({
+
+            db.collection('Posts').doc(docId).set({
+                timestamp: FieldValue.serverTimestamp(),
                 imgUrl: url,
                 caption: text,
                 authorId: id,

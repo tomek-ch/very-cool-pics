@@ -6,6 +6,7 @@ import { Context } from '../Context';
 import UserInfo from '../components/user-profile/UserInfo';
 import FollowersSection from '../components/user-profile/FollowersSection';
 import UserPosts from '../components/user-profile/UserPosts';
+import BioEditor from '../components/user-profile/BioEditor';
 
 function UserProfile() {
     
@@ -56,10 +57,14 @@ function UserProfile() {
                 isThisCurrentUsersProfile={isThisCurrentUsersProfile}
                 username={username}
                 pic={user.profilePic}
-                bio={user.bio}
                 userId={user.id}
                 isUserFollowed={isUserFollowed}
             />
+            {isThisCurrentUsersProfile ?
+            <BioEditor text={user.bio} userId={user.id} /> :
+            <div className="bio">
+                {user.bio}    
+            </div>}
             <FollowersSection
                 following={user.following || []}
                 followers={user.followers || []}

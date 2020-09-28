@@ -20,6 +20,7 @@ function Post() {
             profilePic={post.authorProfilePic}
             postImg={post.imgUrl}
             caption={post.caption}
+            postId={postId}
         />
     );
 }

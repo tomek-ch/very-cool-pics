@@ -9,16 +9,20 @@ function Feed() {
     const [ posts, setPosts ] = useState([]);
 
     useEffect(() => {
-        db.collection('Posts').where('authorId', 'in', [...following, id]).get().then(snapshot => {
-            const postsArr = [];
-            for (let doc of snapshot.docs) postsArr.push({ ...doc.data(), id: doc.id});
+        const ref = db.collection('Posts').where('authorId', 'in', [...following, id]);
+
+        const unsubscribe = ref.onSnapshot(snapshot => {
+            const postsArr = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id}));
             setPosts(postsArr);
         });
+
+        return unsubscribe;
     }, [following, id]);
 
     const postElements = posts.map(post => (
         <PostSection
             key={post.id}
+            postId={post.id}
             username={post.authorUsername}
             profilePic={post.authorProfilePic}
             postImg={post.imgUrl}

@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-function PostSection({ username, profilePic, postImg, caption }) {
+import DeletePostButton from './DeletePostButton';
+import { Context } from '../../Context';
+
+function PostSection({ username, profilePic, postImg, caption, postId }) {
+    const { currentUser } = useContext(Context);
+    const isThisCurrentUsersPost = currentUser.username === username;
+
     return (
         <div className="post">
             <Link to={`/${username}`} className="post-author">
@@ -13,6 +19,7 @@ function PostSection({ username, profilePic, postImg, caption }) {
                 </div>
                 {username}
             </Link>
+            {isThisCurrentUsersPost ? <DeletePostButton postId={postId} /> : ''}
             <div className="post-image">
                 <div className="post-image-inner" style={{backgroundImage: `url(${postImg})`}}></div>
             </div>
