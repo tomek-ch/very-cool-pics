@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-function Comment({ profilePic, username, text }) {
+import DeleteCommentButton from './DeleteCommentButton';
+import { Context } from '../../Context';
+
+function Comment({ profilePic, username, text, id }) {
+    const { currentUser } = useContext(Context);
+    const isThisCurrentUsersComment = currentUser.username === username;
+
     return (
         <div className="comment">
             <div className="profile-picture">
@@ -17,6 +23,7 @@ function Comment({ profilePic, username, text }) {
                     {username}
                 </div>
             </div>
+            {isThisCurrentUsersComment ? <DeleteCommentButton commentId={id} /> : ''}
         </div>
     );
 }
