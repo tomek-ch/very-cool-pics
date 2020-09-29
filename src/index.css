@@ -166,3 +166,8 @@ input:focus {
 .comment {
   display: flex;
 }
+
+.post-top {
+  display: flex;
+  justify-content: space-between;
+}

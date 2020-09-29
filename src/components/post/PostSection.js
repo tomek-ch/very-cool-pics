@@ -12,16 +12,18 @@ function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl,
 
     return (
         <div className="post">
-            <Link to={`/${authorUsername}`} className="post-author">
-                <div className="profile-picture">
-                    <img
-                        src={authorProfilePic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
-                        alt={authorUsername}
-                    />
-                </div>
-                {authorUsername}
-            </Link>
-            {isThisCurrentUsersPost ? <DeletePostButton postId={postId} /> : ''}
+            <div className="post-top">
+                <Link to={`/${authorUsername}`} className="post-author">
+                    <div className="profile-picture">
+                        <img
+                            src={authorProfilePic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
+                            alt={authorUsername}
+                        />
+                    </div>
+                    {authorUsername}
+                </Link>
+                {isThisCurrentUsersPost ? <DeletePostButton postId={postId} /> : ''}
+            </div>
             <div className="post-image">
                 <div className="post-image-inner" style={{backgroundImage: `url(${imgUrl})`}}></div>
             </div>

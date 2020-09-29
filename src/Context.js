@@ -6,6 +6,7 @@ const Context = createContext();
 
 function ContextProvider({ children }) {
     const [ currentUser, setCurrentUser ] = useState(null);
+    const [ expectSignIn, setExpectSignIn ] = useState(!!localStorage.getItem('expectSignIn'));
     // const [ followedUsers, setFollowedUsers ] = useState([]);
 
     useEffect(() => {
@@ -25,10 +26,15 @@ function ContextProvider({ children }) {
                     }));
 
                     // unsubscribe();
+                    setExpectSignIn(true);
+                    localStorage.setItem('expectSignIn', '1');
+
                     return unsubscribe;
                 });
             } else {
                 setCurrentUser(null);
+                setExpectSignIn(false);
+                localStorage.removeItem('myPage.expectSignIn');
             }
         };
 
@@ -49,6 +55,7 @@ function ContextProvider({ children }) {
     return (
         <Context.Provider value={{
             currentUser,
+            expectSignIn,
         }}>
             {children}
         </Context.Provider>
