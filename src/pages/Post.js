@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom';
 
 import { db } from '../firebase';
 import PostSection from '../components/post/PostSection';
+import NotFound from './NotFound';
 
 function Post() {
     const { postId } = useParams();
-    const [ post, setPost ] = useState({});
+    const [ post, setPost ] = useState(null);
     
     useEffect(() => {
         db.collection('Posts').doc(postId).get().then(doc => {
@@ -15,6 +16,8 @@ function Post() {
     }, [postId]);
 
     return (
+        post
+        ?
         <PostSection
             // username={username}
             // profilePic={post.authorProfilePic}
@@ -23,6 +26,8 @@ function Post() {
             postId={postId}
             post={post}
         />
+        :
+        <NotFound />
     );
 }
 

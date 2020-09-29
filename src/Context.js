@@ -34,7 +34,7 @@ function ContextProvider({ children }) {
             } else {
                 setCurrentUser(null);
                 setExpectSignIn(false);
-                localStorage.removeItem('myPage.expectSignIn');
+                localStorage.removeItem('expectSignIn');
             }
         };
 

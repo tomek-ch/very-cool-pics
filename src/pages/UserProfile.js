@@ -7,6 +7,7 @@ import UserInfo from '../components/user-profile/UserInfo';
 import FollowersSection from '../components/user-profile/FollowersSection';
 import UserPosts from '../components/user-profile/UserPosts';
 import BioEditor from '../components/user-profile/BioEditor';
+import NotFound from './NotFound';
 
 function UserProfile() {
     
@@ -52,6 +53,8 @@ function UserProfile() {
     // }, [user]);
 
     return (
+        user.username
+        ?
         <div className="user-profile" >
             <UserInfo
                 isThisCurrentUsersProfile={isThisCurrentUsersProfile}
@@ -77,6 +80,8 @@ function UserProfile() {
                 setPostCount={setPostCount}
             />
         </div>
+        :
+        <NotFound />
     );
 }
 

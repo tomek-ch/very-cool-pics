@@ -8,6 +8,7 @@ import NewPost from './NewPost';
 import UserProfile from './UserProfile';
 import Post from './Post';
 import Comments from './Comments';
+import NotFound from './NotFound';
 
 function MainPage() {
     return (
@@ -17,20 +18,23 @@ function MainPage() {
                 <Route exact path="/">
                     <Feed />
                 </Route>
-                <Route path="/explore">
+                <Route exact path="/explore">
                     <Explore />
                 </Route>
-                <Route path="/new-post">
+                <Route exact path="/new-post">
                     <NewPost />
                 </Route>
-                <Route path="/:username/:postId/comments">
+                <Route exact path="/:username/:postId/comments">
                     <Comments />
                 </Route>
-                <Route path="/:username/:postId">
+                <Route exact path="/:username/:postId">
                     <Post />
                 </Route>
-                <Route path="/:username">
+                <Route exact path="/:username">
                     <UserProfile />
+                </Route>
+                <Route path="*">
+                    <NotFound />
                 </Route>
             </Switch>
         </div>
