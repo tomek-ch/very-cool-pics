@@ -3,17 +3,13 @@ import React from 'react';
 import FollowButton from './FollowButton'
 import SignOutButton from './SignOutButton';
 import ChangeProfilePicButton from './ChangeProfilePicButton';
+import ProfilePicture from '../ProfilePicture';
 
 function UserInfo({ isThisCurrentUsersProfile, isUserFollowed, username, pic, bio, userId }) {
     return (
         <div className="user-info">
             <div className="profile-pic-section">
-                <div className="profile-picture">
-                    <img
-                        src={pic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
-                        alt={username}
-                    />
-                </div>
+                <ProfilePicture src={pic} alt={username} />
                 {isThisCurrentUsersProfile ?
                 <ChangeProfilePicButton userId={userId} /> :
                 <FollowButton

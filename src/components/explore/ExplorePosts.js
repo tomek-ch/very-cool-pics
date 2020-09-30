@@ -20,7 +20,7 @@ function ExplorePosts() {
 
     const postsElements = posts.map(post => (
         <Link
-            to={`/${post.author}/${post.id}`}
+            to={`/post/${post.id}`}
             className="post-thumbnail"
             style={{backgroundImage: `url(${post.imgUrl})`}}
             key={post.id}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function CommentsLink({ username, postId }) {
+function CommentsLink({ postId }) {
     return (
-        <Link to={`/${username}/${postId}/comments`}>
+        <Link to={`/post/${postId}/comments`}>
             Comments
         </Link>
     );

@@ -1,25 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import DeletePostButton from './DeletePostButton';
 import LikeButton from './LikeButton';
 import CommentsLink from './CommentsLink';
 import { Context } from '../../Context';
+import ProfilePicture from '../ProfilePicture';
 
-function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl, caption, likes } }) {
+function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl, caption, likes, authorId } }) {
     const { currentUser } = useContext(Context);
     const isThisCurrentUsersPost = currentUser.username === authorUsername;
 
+    const [displayedLikes, setDisplayedLikes] = useState(likes);
+    
     return (
         <div className="post">
             <div className="post-top">
                 <Link to={`/${authorUsername}`} className="post-author">
-                    <div className="profile-picture">
-                        <img
-                            src={authorProfilePic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
-                            alt={authorUsername}
-                        />
-                    </div>
+                    <ProfilePicture src={authorProfilePic} alt={authorUsername} />
                     {authorUsername}
                 </Link>
                 {isThisCurrentUsersPost ? <DeletePostButton postId={postId} /> : ''}
@@ -31,10 +29,10 @@ function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl,
                 {caption}
             </div>
             <div className="number-of-likes">
-                {likes || 0} {likes === 1 ? 'like' : 'likes'}
+                {displayedLikes || 0} {displayedLikes === 1 ? 'like' : 'likes'}
             </div>
-            <LikeButton postId={postId} />
-            <CommentsLink username={authorUsername} postId={postId} />
+            <LikeButton postId={postId} authorId={authorId} setLikes={setDisplayedLikes} postImg={imgUrl} />
+            <CommentsLink postId={postId} />
         </div>
     );
 }

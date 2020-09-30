@@ -9,6 +9,7 @@ import UserProfile from './UserProfile';
 import Post from './Post';
 import Comments from './Comments';
 import NotFound from './NotFound';
+import Notifications from './Notifications';
 
 function MainPage() {
     return (
@@ -24,10 +25,13 @@ function MainPage() {
                 <Route exact path="/new-post">
                     <NewPost />
                 </Route>
-                <Route exact path="/:username/:postId/comments">
+                <Route exact path="/notifications">
+                    <Notifications />
+                </Route>
+                <Route exact path="/post/:postId/comments">
                     <Comments />
                 </Route>
-                <Route exact path="/:username/:postId">
+                <Route exact path="/post/:postId">
                     <Post />
                 </Route>
                 <Route exact path="/:username">

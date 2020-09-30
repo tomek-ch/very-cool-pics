@@ -24,7 +24,7 @@ function UserPosts({ userId, setPostCount }) {
 
     const postsElements = posts.map(post => (
         <Link
-            to={`/${post.author}/${post.id}`}
+            to={`/post/${post.id}`}
             className="post-thumbnail"
             style={{backgroundImage: `url(${post.imgUrl})`}}
             key={post.id}
@@ -33,7 +33,7 @@ function UserPosts({ userId, setPostCount }) {
 
     return (
         <div className="user-posts">
-            {postsElements}
+            {posts.length ? postsElements : 'This user hasn\'t posted anything yet'}
         </div>
     );
 }

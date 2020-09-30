@@ -3,20 +3,16 @@ import { Link } from 'react-router-dom';
 
 import DeleteCommentButton from './DeleteCommentButton';
 import { Context } from '../../Context';
+import ProfilePicture from '../ProfilePicture';
 
-function Comment({ profilePic, username, text, id }) {
+function Comment({ profilePic, username, text, id, post }) {
     const { currentUser } = useContext(Context);
     const isThisCurrentUsersComment = currentUser.username === username;
 
     return (
         <div className="comment">
             <Link to={`/${username}`}>
-                <div className="profile-picture">
-                    <img
-                        src={profilePic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
-                        alt={username}
-                    />
-                </div>
+                <ProfilePicture src={profilePic} alt={username} />
             </Link>
             <div>
                 <div className="comment-text">
@@ -28,7 +24,13 @@ function Comment({ profilePic, username, text, id }) {
                     </div>
                 </Link>
             </div>
-            {isThisCurrentUsersComment ? <DeleteCommentButton commentId={id} /> : ''}
+            {
+                isThisCurrentUsersComment
+                ?
+                <DeleteCommentButton currentUser={currentUser} commentId={id} post={post} />
+                :
+                ''
+            }
         </div>
     );
 }

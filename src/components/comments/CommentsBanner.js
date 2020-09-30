@@ -3,7 +3,7 @@ import React from 'react';
 import BackButton from './BackButton';
 import CommentEditor from './CommentEditor';
 
-function CommentsBanner({ postId }) {
+function CommentsBanner({ postId, post }) {
     return (
         <div className="comments-banner">
             <div className="comments-header">
@@ -12,7 +12,7 @@ function CommentsBanner({ postId }) {
                     Comments
                 </div>
             </div>
-            <CommentEditor postId={postId} />
+            <CommentEditor postId={postId} post={post} />
         </div>
     );
 }

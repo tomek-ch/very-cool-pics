@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
 }
 
 .app-container {
@@ -169,5 +170,25 @@ input:focus {
 
 .post-top {
   display: flex;
+  justify-content: space-between;
+}
+
+.notification {
+  display: flex;
+}
+
+.notification-post-img {
+  width: 4em;
+  height: 4em;
+  overflow: hidden;
+}
+
+.notification-post-img img {
+  width: 100%;
+}
+
+.notification-link {
+  display: flex;
+  flex-grow: 1;
   justify-content: space-between;
 }

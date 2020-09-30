@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import Comment from './Comment';
 
-function PostComments({ postId }) {
+function PostComments({ postId, post }) {
     const [ comments, setComments ] = useState([]);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function PostComments({ postId }) {
     }, [postId]);
 
     const commentElements = comments.map(comment => (
-        <Comment key={comment.id} {...comment} />
+        <Comment key={comment.id} {...comment} post={post} />
     ));
 
     return (

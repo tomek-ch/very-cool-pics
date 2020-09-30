@@ -6,18 +6,31 @@ import PostSection from '../components/post/PostSection';
 
 function Feed() {
     const { currentUser: { following, id } } = useContext(Context);
+
+    // const [ following ] = useState(currentUser.following);
+    // const [ id ] = useState(currentUser.id);
+
+    //ref is initialized as state so that a change in context doesn't trigger useEffect()
+    const [ ref ] = useState(db.collection('Posts').where('authorId', 'in', [...following, id]));
+
     const [ posts, setPosts ] = useState([]);
 
     useEffect(() => {
-        const ref = db.collection('Posts').where('authorId', 'in', [...following, id]);
+        // const ref = db.collection('Posts').where('authorId', 'in', [...following, id]);
 
-        const unsubscribe = ref.onSnapshot(snapshot => {
-            const postsArr = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id}));
+        // const unsubscribe = ref.onSnapshot(snapshot => {
+        //     console.log('snapshot')
+        //     const postsArr = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+        //     setPosts(postsArr);
+        // });
+
+        // return unsubscribe;
+        ref.get().then(snapshot => {
+            console.log('get')
+            const postsArr = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
             setPosts(postsArr);
-        });
-
-        return unsubscribe;
-    }, [following, id]);
+        })
+    }, [ref]);
 
     const postElements = posts.map(post => (
         <PostSection
@@ -33,7 +46,7 @@ function Feed() {
 
     return (
         <div>
-            {postElements}
+            {posts.length ? postElements : 'Nothing here yet'}
         </div>
     );
 }

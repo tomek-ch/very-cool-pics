@@ -4,7 +4,7 @@ import { db, FieldValue } from '../../firebase';
 import { Context } from '../../Context';
 
 function FollowButton({ idToFollow, isUserFollowed }) {
-    const { currentUser: { id } } = useContext(Context);
+    const { currentUser: { id, username, profilePic } } = useContext(Context);
 
     const switchFollow = () => {
         // const ref = db.collection('Users').doc(id).collection('following').doc(idToFollow);
@@ -31,9 +31,21 @@ function FollowButton({ idToFollow, isUserFollowed }) {
         if (!isUserFollowed) {
             currentUser.update({ following: FieldValue.arrayUnion(idToFollow) });
             userToFollow.update({ followers: FieldValue.arrayUnion(id) });
+
+            userToFollow.collection('notifications').doc(id).set({
+                    text: `${username} started following you.`,
+                    // sender: id,
+                    link: `/${username}`,
+                    username,
+                    profilePic: profilePic || '',
+                    unread: true,
+                    timestamp: FieldValue.serverTimestamp(),
+            });
         } else {
             currentUser.update({ following: FieldValue.arrayRemove(idToFollow) });
             userToFollow.update({ followers: FieldValue.arrayRemove(id) });
+
+            userToFollow.collection('notifications').doc(id).delete();
         }
     };
 

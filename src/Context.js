@@ -6,8 +6,26 @@ const Context = createContext();
 
 function ContextProvider({ children }) {
     const [ currentUser, setCurrentUser ] = useState(null);
-    const [ expectSignIn, setExpectSignIn ] = useState(!!localStorage.getItem('expectSignIn'));
+    const [ notifications, setNotifications ] = useState([]);
+    const [ expectSignIn, setExpectSignIn ] = useState(localStorage.getItem('expectSignIn'));
     // const [ followedUsers, setFollowedUsers ] = useState([]);
+
+    useEffect(() => {
+        if (currentUser) {
+            const ref = db
+                .collection('Users')
+                .doc(currentUser.id)
+                .collection('notifications')
+                .orderBy('timestamp', 'desc');
+
+            ref.onSnapshot(snapshot => {
+                const notsArr = snapshot.docs.map(not => ({ id: not.id, ...not.data() }));
+                setNotifications(notsArr);
+            });
+        } else {
+            setNotifications([]);
+        }
+    }, [currentUser]);
 
     useEffect(() => {
         const authStateObserver = user => {
@@ -28,9 +46,9 @@ function ContextProvider({ children }) {
                     // unsubscribe();
                     setExpectSignIn(true);
                     localStorage.setItem('expectSignIn', '1');
-
-                    return unsubscribe;
                 });
+
+                return unsubscribe;
             } else {
                 setCurrentUser(null);
                 setExpectSignIn(false);
@@ -56,6 +74,7 @@ function ContextProvider({ children }) {
         <Context.Provider value={{
             currentUser,
             expectSignIn,
+            notifications,
         }}>
             {children}
         </Context.Provider>

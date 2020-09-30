@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 
 function Nav() {
-    const { currentUser } = useContext(Context);
+    const { currentUser, notifications } = useContext(Context);
     
     return (
         <nav className="nav-bar">
@@ -16,6 +16,9 @@ function Nav() {
             </Link>
             <Link to="/new-post">
                Add
+            </Link>
+            <Link to="/notifications">
+               Notifications ({notifications.filter(not => not.unread).length})
             </Link>
             <Link to={`/${currentUser.username}`}>
                 Me
