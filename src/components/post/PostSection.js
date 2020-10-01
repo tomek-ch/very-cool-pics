@@ -7,7 +7,7 @@ import CommentsLink from './CommentsLink';
 import { Context } from '../../Context';
 import ProfilePicture from '../ProfilePicture';
 
-function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl, caption, likes, authorId } }) {
+function PostSection({ handleDelete, postId, post: { authorUsername, authorProfilePic, imgUrl, caption, likes, authorId } }) {
     const { currentUser } = useContext(Context);
     const isThisCurrentUsersPost = currentUser.username === authorUsername;
 
@@ -20,7 +20,7 @@ function PostSection({ postId, post: { authorUsername, authorProfilePic, imgUrl,
                     <ProfilePicture src={authorProfilePic} alt={authorUsername} />
                     {authorUsername}
                 </Link>
-                {isThisCurrentUsersPost ? <DeletePostButton postId={postId} /> : ''}
+                {isThisCurrentUsersPost ? <DeletePostButton postId={postId} handleDelete={handleDelete} /> : ''}
             </div>
             <div className="post-image">
                 <div className="post-image-inner" style={{backgroundImage: `url(${imgUrl})`}}></div>

@@ -12,8 +12,11 @@ function Feed() {
 
     //ref is initialized as state so that a change in context doesn't trigger useEffect()
     const [ ref ] = useState(db.collection('Posts').where('authorId', 'in', [...following, id]));
-
     const [ posts, setPosts ] = useState([]);
+
+    const handleDelete = (id) => {
+        setPosts(prevPosts => prevPosts.filter(post => post.id !== id));
+    };
 
     useEffect(() => {
         // const ref = db.collection('Posts').where('authorId', 'in', [...following, id]);
@@ -41,6 +44,7 @@ function Feed() {
             // postImg={post.imgUrl}
             // caption={post.caption}
             post={post}
+            handleDelete={handleDelete}
         />
     ));
 
