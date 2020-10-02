@@ -11,7 +11,10 @@ function Feed() {
     // const [ id ] = useState(currentUser.id);
 
     //ref is initialized as state so that a change in context doesn't trigger useEffect()
-    const [ ref ] = useState(db.collection('Posts').where('authorId', 'in', [...following, id]));
+    const [ ref ] = useState(db.collection('Posts')
+        .orderBy('timestamp', 'desc')
+        .where('authorId', 'in', [...following, id]))
+
     const [ posts, setPosts ] = useState([]);
 
     const handleDelete = (id) => {
