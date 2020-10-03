@@ -60,6 +60,11 @@ input:focus {
   bottom: 0;
   background-color: white;
   width: 100%;
+  max-width: inherit;
+}
+
+button {
+  display: block;
 }
 
 .user-info {

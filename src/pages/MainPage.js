@@ -13,7 +13,7 @@ import Notifications from './Notifications';
 
 function MainPage() {
     return (
-        <div>
+        <>
             <Nav />
             <Switch>
                 <Route exact path="/">
@@ -41,7 +41,7 @@ function MainPage() {
                     <NotFound />
                 </Route>
             </Switch>
-        </div>
+        </>
     );
 }
 
