@@ -66,10 +66,16 @@ input:focus {
   background-color: white;
   width: 100%;
   max-width: inherit;
+  padding: 1em;
 }
 
 .nav-link {
   width: 1.5em;
+}
+
+.active-link {
+  transition: all 0.1s;
+  transform: scale(1.4);
 }
 
 button {
