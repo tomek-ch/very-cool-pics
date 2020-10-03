@@ -20,7 +20,7 @@ body {
 }
 
 .app-container {
-  max-width: 800px;
+  max-width: 500px;
   margin: auto;
   position: relative;
 }
@@ -118,8 +118,12 @@ button {
   justify-content: space-between;
 }
 
+.post {
+  width: 100%;
+}
+
 .post-image {
-  width: 50%;
+  width: 100%;
   overflow: hidden;
 }
 
