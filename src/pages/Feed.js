@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../Context';
 import { db } from '../firebase';
 import PostSection from '../components/post/PostSection';
+import Logo from '../components/Logo';
 
 function Feed() {
     const { currentUser: { following, id } } = useContext(Context);
@@ -52,7 +53,8 @@ function Feed() {
     ));
 
     return (
-        <div>
+        <div className="feed">
+            <Logo />
             {posts.length ? postElements : 'Nothing here yet'}
         </div>
     );
