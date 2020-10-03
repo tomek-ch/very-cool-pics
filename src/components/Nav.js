@@ -3,11 +3,23 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { Context } from '../Context';
-import home from '../icons/home.svg';
-import search from '../icons/search.svg';
-import plusSquare from '../icons/plus-square.svg';
-import heart from '../icons/heart.svg';
-import user from '../icons/user.svg';
+// import home from '../icons/home.svg';
+// import search from '../icons/search.svg';
+// import plusSquare from '../icons/plus-square.svg';
+// import heart from '../icons/heart.svg';
+// import user from '../icons/user.svg';
+
+import home from '../icons/home-2-line.svg';
+import search from '../icons/search-line.svg';
+import add from '../icons/add-box-line.svg';
+import heart from '../icons/heart-line.svg';
+import user from '../icons/user-line.svg';
+
+import homeFill from '../icons/home-2-fill.svg';
+import searchFill from '../icons/search-fill.svg';
+import addFill from '../icons/add-box-fill.svg';
+import heartFill from '../icons/heart-fill.svg';
+import userFill from '../icons/user-fill.svg';
 
 function Nav() {
     const { currentUser: { username }, notifications } = useContext(Context);
@@ -15,25 +27,25 @@ function Nav() {
     
     return (
         <nav className="nav-bar">
-            <Link to="/" className={`nav-link ${path === '/' ? 'active-link' : ''}`}>
-                <img src={home} alt="" />
+            <Link to="/" className="nav-link">
+                <img src={path === '/' ? homeFill : home} alt="" />
             </Link>
-            <Link to="/explore" className={`nav-link ${path === '/explore' ? 'active-link' : ''}`}>
-                <img src={search} alt="" />
+            <Link to="/explore" className="nav-link">
+                <img src={path === '/explore' ? searchFill : search} alt="" />
             </Link>
-            <Link to="/new-post" className={`nav-link ${path === '/new-post' ? 'active-link' : ''}`}>
-               <img src={plusSquare} alt="" />
+            <Link to="/new-post" className="nav-link">
+                <img src={path === '/new-post' ? addFill : add} alt="" />
             </Link>
-            <Link to="/notifications" className={`nav-link ${path === '/notifications' ? 'active-link' : ''}`}>
+            <Link to="/notifications" className="nav-link">
                 <div className="notifications-icon">
-                    <img src={heart} alt="" />
+                    <img src={path === '/notifications' ? heartFill : heart} alt="" />
                     <div className="notifications-badge">
                         {notifications.filter(not => not.unread).length}
                     </div>
                 </div>
             </Link>
-            <Link to={`/${username}`} className={`nav-link ${path === `/${username}` ? 'active-link' : ''}`}>
-                <img src={user} alt="" />
+            <Link to={`/${username}`} className="nav-link">
+                <img src={path === `/${username}` ? userFill : user} alt="" />
             </Link>
         </nav>
     );

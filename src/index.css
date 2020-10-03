@@ -28,6 +28,7 @@ body {
   max-width: 500px;
   margin: auto;
   position: relative;
+  padding-bottom: 4em;
 }
 
 .logo {
@@ -71,17 +72,17 @@ input:focus {
   background-color: white;
   width: 100%;
   max-width: inherit;
-  padding: 1em;
+  padding: 0.5em 0;
 }
 
 .nav-link {
   width: 1.5em;
 }
 
-.active-link {
+/* .active-link {
   transition: all 0.1s;
   transform: scale(1.4);
-}
+} */
 
 .notifications-icon {
   position: relative;
