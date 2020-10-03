@@ -25,7 +25,12 @@ function Nav() {
                <img src={plusSquare} alt="" />
             </Link>
             <Link to="/notifications" className={`nav-link ${path === '/notifications' ? 'active-link' : ''}`}>
-               <img src={heart} alt="" /> ({notifications.filter(not => not.unread).length})
+                <div className="notifications-icon">
+                    <img src={heart} alt="" />
+                    <div className="notifications-badge">
+                        {notifications.filter(not => not.unread).length}
+                    </div>
+                </div>
             </Link>
             <Link to={`/${username}`} className={`nav-link ${path === `/${username}` ? 'active-link' : ''}`}>
                 <img src={user} alt="" />

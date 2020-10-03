@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 html {
   height: 100%;
 }
@@ -76,6 +81,24 @@ input:focus {
 .active-link {
   transition: all 0.1s;
   transform: scale(1.4);
+}
+
+.notifications-icon {
+  position: relative;
+}
+
+.notifications-badge {
+  font-size: 0.7em;
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 6px;
+  text-align: center;
 }
 
 button {
