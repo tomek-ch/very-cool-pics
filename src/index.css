@@ -68,6 +68,10 @@ input:focus {
   max-width: inherit;
 }
 
+.nav-link {
+  width: 1.5em;
+}
+
 button {
   display: block;
 }
