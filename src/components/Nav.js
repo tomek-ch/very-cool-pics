@@ -3,11 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { Context } from '../Context';
-// import home from '../icons/home.svg';
-// import search from '../icons/search.svg';
-// import plusSquare from '../icons/plus-square.svg';
-// import heart from '../icons/heart.svg';
-// import user from '../icons/user.svg';
 
 import home from '../icons/home-2-line.svg';
 import search from '../icons/search-line.svg';

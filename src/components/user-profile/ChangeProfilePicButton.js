@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 
 import { storage, db } from '../../firebase';
+import pencil from '../../icons/pencil-line.svg';
 
 function ChangeProfilePicButton({ userId }) {
 
@@ -32,6 +33,7 @@ function ChangeProfilePicButton({ userId }) {
                 onClick={() => fileInput.current.click()}
                 className="change-pfp"
             >
+                <img src={pencil} alt="edit" />
                 Change pic
             </button>
             <input

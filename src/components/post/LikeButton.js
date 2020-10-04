@@ -3,6 +3,9 @@ import React, { useContext } from 'react';
 import { db, FieldValue } from '../../firebase';
 import { Context } from '../../Context';
 
+import heart from '../../icons/heart-line.svg';
+import heartFill from '../../icons/heart-fill.svg';
+
 function LikeButton({ postId, authorId, setLikes, postImg }) {
 
     const { currentUser: { id, likedPosts, username, profilePic } } = useContext(Context);
@@ -55,7 +58,7 @@ function LikeButton({ postId, authorId, setLikes, postImg }) {
 
     return (
         <button onClick={handleClick}>
-            {isLiked ? 'Unlike' : 'Like'}
+            <img src={isLiked ? heartFill : heart} alt="like-button" />
         </button>
     );
 }

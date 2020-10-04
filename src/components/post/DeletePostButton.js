@@ -2,6 +2,8 @@ import React from 'react';
 
 import { db } from '../../firebase';
 
+import trash from '../../icons/delete-bin-line.svg';
+
 function DeletePostButton({ postId, handleDelete }) {
     const deletePost = () => {
         db.collection('Posts').doc(postId).delete().then(() => {
@@ -11,7 +13,7 @@ function DeletePostButton({ postId, handleDelete }) {
 
     return (
         <button onClick={deletePost}>
-            Delete
+            <img src={trash} alt="delete post" />
         </button>
     );
 }

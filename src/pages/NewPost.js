@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { db, FieldValue, storage } from '../firebase';
 import { Context } from '../Context';
 
+import image from '../icons/image-2-line.svg';
+
 function NewPost() {
     const { currentUser } = useContext(Context);
     const history = useHistory();
@@ -65,6 +67,7 @@ function NewPost() {
                     onClick={handleClick}
                     className="change-new-post-image"
                 >
+                    <img src={image} alt="select" />
                     Select photo
                 </button>
                 <input

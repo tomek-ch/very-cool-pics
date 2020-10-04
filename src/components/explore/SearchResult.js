@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ProfilePicture from '../ProfilePicture';
+
 function SearchResult({ name, pic }) {
     return (
         <Link to={name} className="search-result">
-            <div className="profile-picture">
-                <img
-                    src={pic || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
-                    alt={name}
-                />
-            </div>
+            <ProfilePicture src={pic} alt={name} />
             <div className="username">
                 {name}
             </div>

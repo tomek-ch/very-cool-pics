@@ -1,10 +1,12 @@
 import React from 'react';
 
+import user from '../icons/user-line.svg';
+
 function ProfilePicture({ src, alt }) {
     return (
         <div className="profile-picture">
         <img
-            src={src || 'https://icon-library.com/images/icon-user/icon-user-15.jpg'}
+            src={src || user}
             alt={alt}
         />
     </div>

@@ -31,8 +31,10 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
             <div className="number-of-likes">
                 {displayedLikes || 0} {displayedLikes === 1 ? 'like' : 'likes'}
             </div>
-            <LikeButton postId={postId} authorId={authorId} setLikes={setDisplayedLikes} postImg={imgUrl} />
-            <CommentsLink postId={postId} />
+            <div className="likes-and-comments">
+                <LikeButton postId={postId} authorId={authorId} setLikes={setDisplayedLikes} postImg={imgUrl} />
+                <CommentsLink postId={postId} />
+            </div>
         </div>
     );
 }
