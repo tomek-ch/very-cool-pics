@@ -37,7 +37,7 @@ function BioEditor({ text, userId }) {
                     className="bio-editor-button"
                     onClick={edit}
                 >
-                    <img src={pencil} alt="edit" />
+                    <img src={pencil} alt="edit" className="edit-icon" />
                     Edit bio
                 </button>
             </div> :

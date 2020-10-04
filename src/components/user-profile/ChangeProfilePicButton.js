@@ -33,7 +33,7 @@ function ChangeProfilePicButton({ userId }) {
                 onClick={() => fileInput.current.click()}
                 className="change-pfp"
             >
-                <img src={pencil} alt="edit" />
+                <img src={pencil} alt="edit" className="edit-icon" />
                 Change pic
             </button>
             <input

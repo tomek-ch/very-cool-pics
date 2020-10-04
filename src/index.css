@@ -115,6 +115,10 @@ button {
   justify-content: space-between;
 }
 
+.edit-icon {
+  height: 1em;
+}
+
 .info-username {
   font-size: 2em;
   margin: 0 0.3em;
