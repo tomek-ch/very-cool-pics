@@ -7,25 +7,23 @@ import ProfilePicture from '../ProfilePicture';
 
 function UserInfo({ isThisCurrentUsersProfile, isUserFollowed, username, pic, bio, userId }) {
     return (
-        <div className="user-info">
-            <div className="profile-pic-section">
+        <>
+            <div className="user-info">
                 <ProfilePicture src={pic} alt={username} />
-                {isThisCurrentUsersProfile ?
-                <ChangeProfilePicButton userId={userId} /> :
-                <FollowButton
-                    pic={pic}
-                    username={username}
-                    idToFollow={userId}
-                    isUserFollowed={isUserFollowed}
-                />}
-            </div>
-            <div className="username-and-bio">
                 <div className="info-username">
                     {username}
                 </div>
+                {isThisCurrentUsersProfile ? <SignOutButton /> : ''}
             </div>
-            {isThisCurrentUsersProfile ? <SignOutButton /> : ''}
-        </div>
+            {isThisCurrentUsersProfile ?
+            <ChangeProfilePicButton userId={userId} /> :
+            <FollowButton
+                pic={pic}
+                username={username}
+                idToFollow={userId}
+                isUserFollowed={isUserFollowed}
+            />}
+        </>
     );
 }
 

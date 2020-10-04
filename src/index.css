@@ -136,8 +136,8 @@ button {
 }
 
 .profile-picture {
-  width: 4em;
-  height: 4em;
+  width: 3.5em;
+  height: 3.5em;
   border-radius: 50%;
   overflow: hidden;
 }
