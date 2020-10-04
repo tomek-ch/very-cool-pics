@@ -159,6 +159,11 @@ button {
   justify-content: space-between;
 }
 
+.count {
+  font-size: 1.5em;
+  text-align: center;
+}
+
 .post {
   width: 100%;
 }

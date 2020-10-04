@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { db } from '../../firebase';
-
 import trash from '../../icons/delete-bin-line.svg';
 
 function DeletePostButton({ postId, handleDelete }) {

@@ -8,7 +8,7 @@ function FollowersSection({ postCount, followers, following }) {
     return (
         <div className="followers-section">
             <div className="post-count">
-                <div>
+                <div className="count">
                     {postCount}
                 </div>
                 <div>
@@ -16,7 +16,7 @@ function FollowersSection({ postCount, followers, following }) {
                 </div>
             </div>
             <div className="followers-count">
-                <div>
+                <div className="count">
                     {followerCount}
                 </div>
                 <div>
@@ -24,7 +24,7 @@ function FollowersSection({ postCount, followers, following }) {
                 </div>
             </div>
             <div className="following-count">
-                <div>
+                <div className="count">
                     {followingCount}
                 </div>
                 <div>
