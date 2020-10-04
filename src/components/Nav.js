@@ -7,13 +7,13 @@ import { Context } from '../Context';
 import home from '../icons/home-2-line.svg';
 import search from '../icons/search-line.svg';
 import add from '../icons/add-box-line.svg';
-import heart from '../icons/heart-line.svg';
+import heart from '../icons/heart-3-line.svg';
 import user from '../icons/user-line.svg';
 
 import homeFill from '../icons/home-2-fill.svg';
 import searchFill from '../icons/search-fill.svg';
 import addFill from '../icons/add-box-fill.svg';
-import heartFill from '../icons/heart-fill.svg';
+import heartFill from '../icons/heart-3-fill.svg';
 import userFill from '../icons/user-fill.svg';
 
 function Nav() {

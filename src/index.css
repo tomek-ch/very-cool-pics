@@ -9,6 +9,15 @@ a {
   color: inherit;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: bold;
+}
+
 html {
   height: 100%;
 }
