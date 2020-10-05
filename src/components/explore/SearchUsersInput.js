@@ -9,7 +9,7 @@ function SearchUsersInput({ text, setText }) {
 
     return (
         <input type="text"
-            className="user-search-input"
+            className="user-search-input textbox"
             value={text}
             onChange={handleChange}
             placeholder="Search"

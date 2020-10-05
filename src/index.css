@@ -119,14 +119,23 @@ body {
   padding: 0.4em;
   border: 1px solid lightgray;
   border-radius: 5px;
+  font-weight: 500;
+}
+
+.textbox {
+  border: 1px solid rgb(24, 100, 177);
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.user-search-input {
+  border-color: lightgray;
+  width: 100%;
 }
 
 .bio-textbox {
   width: 100%;
   height: 4.5em;
-  border: 1px solid rgb(24, 100, 177);
-  border-radius: 5px;
-  padding: 0.5em;
 }
 
 .bio-editor-buttons {
@@ -138,16 +147,17 @@ body {
   background-color:  rgb(24, 100, 177);
   color: white;
   border-radius: 5px;
+  font-weight: 500;
+}
+
+.cancel-button {
+  color: rgb(24, 100, 177);
+  font-weight: 500;
 }
 
 .bio-editor-save-button {
   margin-left: 1em;
 }
-
-.bio-editor-cancel-button {
-  color: rgb(24, 100, 177);
-}
-
 .form-error {
   color: red;
   font-weight: 500;

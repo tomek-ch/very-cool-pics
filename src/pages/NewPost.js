@@ -79,6 +79,8 @@ function NewPost() {
                     type="text"
                     value={text}
                     onChange={handleChange}
+                    className="textbox"
+                    placeholder="Post caption"
                 />
                 <button className="action-button">
                     Add new post
