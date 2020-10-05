@@ -16,7 +16,7 @@ function DeleteCommentButton({ commentId, post, currentUser }) {
     };
 
     return (
-        <button onClick={deleteComment}>
+        <button onClick={deleteComment} className="delete-comment-button">
             <img src={trash} alt="delete" />
         </button>
     );

@@ -239,6 +239,19 @@ button {
   display: flex;
 }
 
+.delete-comment-button {
+  margin-left: auto;
+}
+
+.comment-form {
+  display: flex;
+  flex-grow: 1;
+}
+
+.comment-input {
+  flex-grow: 1;
+}
+
 .post-top {
   display: flex;
   justify-content: space-between;

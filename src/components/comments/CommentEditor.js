@@ -55,6 +55,7 @@ function CommentEditor({ postId, post }) {
                     value={comment}
                     onChange={handleChange}
                     placeholder="Type a comment..."
+                    className="comment-input"
                 />
                 <button>
                     Add
