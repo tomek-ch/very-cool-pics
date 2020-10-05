@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 
 import { storage, db } from '../../firebase';
-import pencil from '../../icons/pencil-line.svg';
 
 function ChangeProfilePicButton({ userId }) {
 
@@ -31,9 +30,8 @@ function ChangeProfilePicButton({ userId }) {
         <form className="change-pfp-form" onSubmit={e => e.preventDefault()} ref={form}>
             <button
                 onClick={() => fileInput.current.click()}
-                className="change-pfp"
+                className="change-pfp-button border-button"
             >
-                <img src={pencil} alt="edit" className="edit-icon" />
                 Change pic
             </button>
             <input

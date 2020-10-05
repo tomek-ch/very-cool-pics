@@ -16,8 +16,9 @@ a, input, textarea, button {
 }
 
 button {
-  font-weight: bold;
+  /* font-weight: bold; */
   cursor: pointer;
+  display: block;
 }
 
 html {
@@ -83,7 +84,7 @@ body {
 }
 
 .nav-link {
-  width: 1.5em;
+  font-size: 1.5em;
 }
 
 .notifications-icon {
@@ -91,21 +92,17 @@ body {
 }
 
 .notifications-badge {
-  font-size: 0.7em;
+  font-size: 0.4em;
   position: absolute;
-  top: -0.5em;
+  top: -0.2em;
   right: -0.5em;
   font-weight: bold;
   background-color: red;
   color: white;
   width: 1.5em;
   height: 1.5em;
-  border-radius: 6px;
+  border-radius: 5px;
   text-align: center;
-}
-
-button {
-  display: block;
 }
 
 .user-info {
@@ -113,13 +110,15 @@ button {
   justify-content: space-between;
 }
 
-.edit-icon {
-  height: 1em;
-}
-
 .info-username {
   font-size: 2em;
   margin: 0 0.3em;
+}
+
+.border-button {
+  padding: 0.4em;
+  border: 1px solid lightgray;
+  border-radius: 5px;
 }
 
 .bio-textbox {
@@ -134,12 +133,15 @@ button {
   display: flex;
 }
 
-.bio-editor-save-button {
-  margin-left: 1em;
+.action-button {
   padding: 0.4em;
   background-color:  rgb(24, 100, 177);
   color: white;
   border-radius: 5px;
+}
+
+.bio-editor-save-button {
+  margin-left: 1em;
 }
 
 .bio-editor-cancel-button {
@@ -242,6 +244,14 @@ button {
 
 .likes-and-comments {
   display: flex;
+  font-size: 1.5em;
+}
+
+.sign-out-button,
+.back-button,
+.delete-comment-button,
+.delete-post-button {
+  font-size: 1.5em;
 }
 
 .comments-header {
@@ -255,6 +265,11 @@ button {
 
 .comment-editor {
   display: flex;
+  align-items: center;
+}
+
+.add-comment-button {
+  height: fit-content;
 }
 
 .comment {

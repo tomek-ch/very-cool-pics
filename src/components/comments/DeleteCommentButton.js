@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import { db } from '../../firebase';
-import trash from '../../icons/delete-bin-line.svg';
 
 function DeleteCommentButton({ commentId, post, currentUser }) {
     const { postId } = useParams();
@@ -17,7 +16,7 @@ function DeleteCommentButton({ commentId, post, currentUser }) {
 
     return (
         <button onClick={deleteComment} className="delete-comment-button">
-            <img src={trash} alt="delete" />
+            <i className="ri-delete-bin-line"></i>
         </button>
     );
 }

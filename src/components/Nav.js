@@ -4,18 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { Context } from '../Context';
 
-import home from '../icons/home-2-line.svg';
-import search from '../icons/search-line.svg';
-import add from '../icons/add-box-line.svg';
-import heart from '../icons/heart-3-line.svg';
-import user from '../icons/user-line.svg';
-
-import homeFill from '../icons/home-2-fill.svg';
-import searchFill from '../icons/search-fill.svg';
-import addFill from '../icons/add-box-fill.svg';
-import heartFill from '../icons/heart-3-fill.svg';
-import userFill from '../icons/user-fill.svg';
-
 function Nav() {
     const { currentUser: { username }, notifications } = useContext(Context);
     const path = useLocation().pathname;
@@ -23,24 +11,24 @@ function Nav() {
     return (
         <nav className="nav-bar">
             <Link to="/" className="nav-link">
-                <img src={path === '/' ? homeFill : home} alt="" />
+                {path === '/' ? <i className="ri-home-2-fill"></i> : <i className="ri-home-2-line"></i>}
             </Link>
             <Link to="/explore" className="nav-link">
-                <img src={path === '/explore' ? searchFill : search} alt="" />
+                {path === '/explore' ? <i className="ri-search-fill"></i> : <i className="ri-search-line"></i>}
             </Link>
             <Link to="/new-post" className="nav-link">
-                <img src={path === '/new-post' ? addFill : add} alt="" />
+                {path === '/new-post' ? <i className="ri-add-box-fill"></i> : <i className="ri-add-box-line"></i>}
             </Link>
             <Link to="/notifications" className="nav-link">
                 <div className="notifications-icon">
-                    <img src={path === '/notifications' ? heartFill : heart} alt="" />
+                    {path === '/notifications' ? <i className="ri-heart-3-fill"></i> : <i className="ri-heart-3-line"></i>}
                     <div className="notifications-badge">
                         {notifications.filter(not => not.unread).length}
                     </div>
                 </div>
             </Link>
             <Link to={`/${username}`} className="nav-link">
-                <img src={path === `/${username}` ? userFill : user} alt="" />
+                {path === `/${username}` ? <i className="ri-user-line"></i> : <i className="ri-user-line"></i>}
             </Link>
         </nav>
     );

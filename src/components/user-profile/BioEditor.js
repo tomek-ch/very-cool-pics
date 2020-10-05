@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import { db } from '../../firebase';
-import pencil from '../../icons/pencil-line.svg';
 
 function BioEditor({ text, userId }) {
     const [isBeingEdited, setIsBeingEdited] = useState(false);
@@ -34,10 +33,9 @@ function BioEditor({ text, userId }) {
             <div className="bio-editor">
                 {text}
                 <button
-                    className="bio-editor-button"
+                    className="bio-editor-button border-button"
                     onClick={edit}
                 >
-                    <img src={pencil} alt="edit" className="edit-icon" />
                     Edit bio
                 </button>
             </div> :
@@ -55,7 +53,7 @@ function BioEditor({ text, userId }) {
                         Cancel
                     </button>
                     <button
-                        className="bio-editor-save-button"
+                        className="bio-editor-save-button action-button"
                     >
                         Save
                     </button>
