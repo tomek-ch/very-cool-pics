@@ -27,15 +27,17 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
             <div className="post-image">
                 <div className="post-image-inner" style={{backgroundImage: `url(${imgUrl})`}}></div>
             </div>
-            <div className="post-caption">
-                {caption}
-            </div>
-            <div className="number-of-likes">
-                {displayedLikes || 0} {displayedLikes === 1 ? 'like' : 'likes'}
-            </div>
-            <div className="likes-and-comments">
-                <LikeButton postId={postId} authorId={authorId} setLikes={setDisplayedLikes} postImg={imgUrl} />
-                <CommentsLink postId={postId} />
+            <div className="post-bottom">
+                <div className="likes-and-comments">
+                    <LikeButton postId={postId} authorId={authorId} setLikes={setDisplayedLikes} postImg={imgUrl} />
+                    <CommentsLink postId={postId} />
+                </div>
+                <div className="number-of-likes">
+                    {displayedLikes || 0} {displayedLikes === 1 ? 'like' : 'likes'}
+                </div>
+                <div className="post-caption">
+                    {caption}
+                </div>
             </div>
         </div>
     );

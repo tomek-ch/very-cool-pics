@@ -278,9 +278,17 @@ body {
   height: 2em;
 }
 
+.number-of-likes {
+  font-weight: 500;
+}
+
 .likes-and-comments {
   display: flex;
-  font-size: 1.5em;
+  font-size: 1.7em;
+}
+
+.comments-link {
+  margin-left: 0.2em;
 }
 
 .liked-icon {
@@ -332,7 +340,12 @@ body {
 .post-top {
   display: flex;
   justify-content: space-between;
-  padding: 0.5em;
+  padding: 0.5em 1em;
+}
+
+.post-bottom {
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
 }
 
 .notification {
