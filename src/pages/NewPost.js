@@ -75,11 +75,11 @@ function NewPost() {
                     onChange={onMediaFileSelected}
                     ref={fileInput}
                 />
-                <input
+                <textarea
                     type="text"
                     value={text}
                     onChange={handleChange}
-                    className="textbox"
+                    className="caption-input textbox"
                     placeholder="Post caption"
                 />
                 <button className="action-button">
