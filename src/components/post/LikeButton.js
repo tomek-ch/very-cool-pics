@@ -54,7 +54,7 @@ function LikeButton({ postId, authorId, setLikes, postImg }) {
     };
 
     return (
-        <button onClick={handleClick}>
+        <button onClick={handleClick} className={isLiked ? 'liked-icon' : ''}>
             {isLiked ? <i className="ri-heart-3-fill"></i> : <i className="ri-heart-3-line"></i>}
         </button>
     );

@@ -270,6 +270,10 @@ body {
   font-size: 1.5em;
 }
 
+.liked-icon {
+  color: red;
+}
+
 .sign-out-button,
 .back-button,
 .delete-comment-button,
