@@ -8,12 +8,15 @@ function SearchUsersInput({ text, setText }) {
     };
 
     return (
-        <input type="text"
-            className="user-search-input textbox"
-            value={text}
-            onChange={handleChange}
-            placeholder="Search"
-        />
+        <div className="user-search-input textbox">
+            <i className="ri-search-line"></i>
+            <input type="text"
+                value={text}
+                onChange={handleChange}
+                placeholder="Search"
+                className="search-textfield"
+            />
+        </div>
     );
 }
 
