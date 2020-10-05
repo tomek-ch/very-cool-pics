@@ -264,6 +264,18 @@ body {
 
 .post-author {
   display: flex;
+  align-items: center;
+}
+
+.post-author-username {
+  margin-left: 0.5em;
+  /* font-size: 1.5em; */
+  font-weight: 500;
+}
+
+.post-author .profile-picture {
+  width: 2em;
+  height: 2em;
 }
 
 .likes-and-comments {
@@ -320,6 +332,7 @@ body {
 .post-top {
   display: flex;
   justify-content: space-between;
+  padding: 0.5em;
 }
 
 .notification {

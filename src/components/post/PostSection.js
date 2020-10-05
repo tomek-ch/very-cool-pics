@@ -18,7 +18,9 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
             <div className="post-top">
                 <Link to={`/${authorUsername}`} className="post-author">
                     <ProfilePicture src={authorProfilePic} alt={authorUsername} />
-                    {authorUsername}
+                    <div className="post-author-username">
+                        {authorUsername}
+                    </div>
                 </Link>
                 {isThisCurrentUsersPost ? <DeletePostButton postId={postId} handleDelete={handleDelete} /> : ''}
             </div>
