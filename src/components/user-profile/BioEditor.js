@@ -45,18 +45,21 @@ function BioEditor({ text, userId }) {
                 <textarea
                     value={value}
                     onChange={handleChange}
+                    className="bio-textbox"
                 />
-                <button
-                    className="bio-editor-button"
-                    onClick={cancel}
-                >
-                    Cancel
-                </button>
-                <button
-                    className="bio-editor-button"
-                >
-                    Save
-                </button>
+                <div className="bio-editor-buttons">
+                    <button
+                        className="bio-editor-button"
+                        onClick={cancel}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        className="bio-editor-button"
+                    >
+                        Save
+                    </button>
+                </div>
             </form>
     );
 }
