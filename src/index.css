@@ -131,6 +131,18 @@ button {
   display: flex;
 }
 
+.bio-editor-save-button {
+  margin-left: 1em;
+  padding: 0.4em;
+  background-color:  rgb(24, 100, 177);
+  color: white;
+  border-radius: 5px;
+}
+
+.bio-editor-cancel-button {
+  color: rgb(24, 100, 177);
+}
+
 .form-error {
   color: red;
   font-weight: 500;

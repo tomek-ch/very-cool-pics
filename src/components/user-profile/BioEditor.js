@@ -49,13 +49,13 @@ function BioEditor({ text, userId }) {
                 />
                 <div className="bio-editor-buttons">
                     <button
-                        className="bio-editor-button"
+                        className="bio-editor-cancel-button"
                         onClick={cancel}
                     >
                         Cancel
                     </button>
                     <button
-                        className="bio-editor-button"
+                        className="bio-editor-save-button"
                     >
                         Save
                     </button>
