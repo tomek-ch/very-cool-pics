@@ -149,6 +149,12 @@ body {
 
 .new-post {
   padding: 1em;
+  padding-top: 0;
+}
+
+.new-post h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
 }
 
 .change-new-post-image {
