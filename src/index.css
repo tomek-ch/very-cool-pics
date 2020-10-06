@@ -147,6 +147,18 @@ body {
   width: 100%;
 }
 
+.new-post {
+  padding: 1em;
+}
+
+.change-new-post-image {
+  margin: 0.5em 0;
+}
+
+.add-post-button {
+  margin: 0.5em 0;
+}
+
 .caption-input {
   width: 100%;
   height: 4.5em;

@@ -82,11 +82,11 @@ function NewPost() {
                     className="caption-input textbox"
                     placeholder="Post caption"
                 />
-                <button className="action-button">
+                <button className="add-post-button action-button">
                     Add new post
                 </button>
             </form>
-            <div className="post-image">
+            <div className="post-image post-preview">
                 <div className="post-image-inner" style={{backgroundImage: `url(${previewImgUrl})`}}></div>
             </div>
         </div>
