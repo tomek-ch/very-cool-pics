@@ -237,6 +237,15 @@ body {
 
 .search-result {
   display: flex;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  align-items: center;
+}
+
+.search-result .profile-picture {
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 0.5em;
 }
 
 .followers-section {
