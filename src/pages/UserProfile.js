@@ -56,20 +56,22 @@ function UserProfile() {
         user.username
         ?
         <div className="user-profile" >
-            <UserInfo
-                isThisCurrentUsersProfile={isThisCurrentUsersProfile}
-                username={username}
-                pic={user.profilePic}
-                userId={user.id}
-                isUserFollowed={isUserFollowed}
-            />
-            {
-                isThisCurrentUsersProfile ?
-                <BioEditor text={user.bio} userId={user.id} /> :
-                <div className="bio">
-                    {user.bio}    
-                </div>
-            }
+            <div className="profile-top">
+                <UserInfo
+                    isThisCurrentUsersProfile={isThisCurrentUsersProfile}
+                    username={username}
+                    pic={user.profilePic}
+                    userId={user.id}
+                    isUserFollowed={isUserFollowed}
+                />
+                {
+                    isThisCurrentUsersProfile ?
+                    <BioEditor text={user.bio} userId={user.id} /> :
+                    <div className="bio">
+                        {user.bio}    
+                    </div>
+                }
+            </div>
             <FollowersSection
                 following={user.following || []}
                 followers={user.followers || []}

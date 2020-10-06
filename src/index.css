@@ -80,7 +80,7 @@ body {
   background-color: white;
   width: 100%;
   max-width: inherit;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   border-top: 1px solid lightgray;
 }
 
@@ -106,6 +106,10 @@ body {
   text-align: center;
 }
 
+.profile-top {
+  padding: 1em;
+}
+
 .user-info {
   display: flex;
   justify-content: space-between;
@@ -114,6 +118,7 @@ body {
 .info-username {
   font-size: 2em;
   margin: 0 0.3em;
+  margin: 0 auto;
 }
 
 .border-button {
@@ -152,8 +157,13 @@ body {
   height: 4.5em;
 }
 
+/* .bio-editor {
+  margin: 1em 0;
+} */
+
 .bio-editor-buttons {
   display: flex;
+  margin: 0.3em 0;
 }
 
 .action-button {
@@ -179,6 +189,15 @@ body {
 
 .change-pfp-form {
   position: relative;
+  margin: 0.5em 0;
+}
+
+.follow-button {
+  margin: 0.5em 0;
+}
+
+.bio-editor-button {
+  margin: 0.5em 0;
 }
 
 .image-input {
@@ -205,6 +224,11 @@ body {
 .followers-section {
   display: flex;
   justify-content: space-between;
+  font-weight: 500;
+  margin: 0.2em 0;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding: 0.5em 1em;
 }
 
 .count {
