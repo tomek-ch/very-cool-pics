@@ -5,6 +5,7 @@ import { Context } from '../Context';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import MainPage from '../pages/MainPage';
+import Loading from './Loading';
 
 function App() {
   const { currentUser, expectSignIn } = useContext(Context);
@@ -19,7 +20,7 @@ function App() {
           {expectSignIn ? <Redirect to="/" /> : <SignUp />}
         </Route>
         <Route path="/">
-          {currentUser ? <MainPage /> : (expectSignIn ? <div>Loading...</div> : <Redirect to="/sign-in"/>)}
+          {currentUser ? <MainPage /> : (expectSignIn ? <Loading /> : <Redirect to="/sign-in"/>)}
         </Route>
       </Switch>
     </div>

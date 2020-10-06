@@ -8,6 +8,7 @@ import FollowersSection from '../components/user-profile/FollowersSection';
 import UserPosts from '../components/user-profile/UserPosts';
 import BioEditor from '../components/user-profile/BioEditor';
 import NotFound from './NotFound';
+import Loading from '../components/Loading';
 
 function UserProfile() {
     
@@ -88,7 +89,7 @@ function UserProfile() {
         :
         isLoading
         ?
-        'Loading...'
+        <Loading />
         :
         <NotFound />
     );
