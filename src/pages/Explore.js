@@ -11,7 +11,9 @@ function Explore() {
 
     return (
         <div>
-            <SearchUsersInput text={searchedText} setText={setSearchedText} />
+            <div className="explore-top">
+                <SearchUsersInput text={searchedText} setText={setSearchedText} />
+            </div>
             {searchedText
             ? <SearchResults searchedText={searchedText} />
             : <ExplorePosts />}
