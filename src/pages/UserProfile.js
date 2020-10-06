@@ -17,6 +17,7 @@ function UserProfile() {
     const isThisCurrentUsersProfile = currentUser.username === username;
     
     const [ user, setUser ] = useState({});
+    const [ isLoading, setIsLoading ] = useState(true);
     const [ postCount, setPostCount ] = useState(0);
     // const [ following, setFollowing ] = useState([]);
     // const [ followers, setFollowers ] = useState([]);
@@ -33,6 +34,8 @@ function UserProfile() {
                     ...userDoc.data(),
                 });
             }
+
+            setIsLoading(false);
         });
         
         return unsubscribe;
@@ -82,6 +85,10 @@ function UserProfile() {
                 setPostCount={setPostCount}
             />
         </div>
+        :
+        isLoading
+        ?
+        'Loading...'
         :
         <NotFound />
     );
