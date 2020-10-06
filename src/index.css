@@ -334,12 +334,18 @@ body {
 
 .comments-header {
   display: flex;
+  padding: 0.5em 1em;
+}
+
+.comments-header i {
+  font-size: 1.2em;
 }
 
 .comments-heading {
   margin-left: auto;
   margin-right: auto;
   font-weight: 500;
+  font-size: 1.2em;
 }
 
 .comment-editor {
