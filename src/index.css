@@ -352,22 +352,42 @@ body {
   display: flex;
   align-items: center;
   background-color: WhiteSmoke;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   border: 1px solid lightgray;
   /* border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray; */
 }
 
+.comment-editor .profile-picture {
+  flex-shrink: 0;
+  width: 2.5em;
+  height: 2.5em;
+}
+
 .add-comment-button {
   height: fit-content;
+  margin-left: 0.5em;
 }
 
 .comment {
   display: flex;
+  margin: 1em;
+}
+
+.comment .profile-picture {
+  margin-right: 0.5em;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.comment-author {
+  font-weight: 500;
+  margin-right: 0.5em;
 }
 
 .delete-comment-button {
   margin-left: auto;
+  margin-bottom: auto;
 }
 
 .comment-form {

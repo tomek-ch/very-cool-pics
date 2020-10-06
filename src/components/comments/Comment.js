@@ -15,14 +15,14 @@ function Comment({ profilePic, username, text, id, post }) {
                 <ProfilePicture src={profilePic} alt={username} />
             </Link>
             <div>
-                <div className="comment-text">
-                    {text}
-                </div>
                 <Link to={`/${username}`}>
-                    <div className="comment-author">
+                    <span className="comment-author">
                         {username}
-                    </div>
+                    </span>
                 </Link>
+                <span className="comment-text">
+                    {text}
+                </span>
             </div>
             {
                 isThisCurrentUsersComment
