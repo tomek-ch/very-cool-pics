@@ -17,6 +17,7 @@ function Feed() {
         .where('authorId', 'in', [...following, id]))
 
     const [ posts, setPosts ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(true);
 
     const handleDelete = (id) => {
         setPosts(prevPosts => prevPosts.filter(post => post.id !== id));
@@ -36,6 +37,7 @@ function Feed() {
             console.log('get')
             const postsArr = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
             setPosts(postsArr);
+            setIsLoading(false);
         })
     }, [ref]);
 
@@ -55,7 +57,7 @@ function Feed() {
     return (
         <div className="feed">
             <Logo />
-            {posts.length ? postElements : 'Nothing here yet'}
+            {posts.length ? postElements : isLoading ? 'Loading...' : 'Nothing here yet'}
         </div>
     );
 }
