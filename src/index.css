@@ -235,9 +235,13 @@ body {
   width: 100%;
 }
 
+.search-results {
+  padding: 0 1em;
+}
+
 .search-result {
   display: flex;
-  padding: 0.5em 1em;
+  padding: 0.5em 0;
   font-weight: 500;
   align-items: center;
 }
