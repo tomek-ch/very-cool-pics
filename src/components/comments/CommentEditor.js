@@ -55,9 +55,9 @@ function CommentEditor({ postId, post }) {
                     value={comment}
                     onChange={handleChange}
                     placeholder="Type a comment..."
-                    className="comment-input textbox"
+                    className="comment-input"
                 />
-                <button className="add-comment-button action-button">
+                <button className="add-comment-button cancel-button">
                     Add
                 </button>
             </form>

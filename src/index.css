@@ -315,11 +315,17 @@ body {
 .comments-heading {
   margin-left: auto;
   margin-right: auto;
+  font-weight: 500;
 }
 
 .comment-editor {
   display: flex;
   align-items: center;
+  background-color: WhiteSmoke;
+  padding: 0.5em;
+  border: 1px solid lightgray;
+  /* border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray; */
 }
 
 .add-comment-button {
@@ -337,6 +343,11 @@ body {
 .comment-form {
   display: flex;
   flex-grow: 1;
+  padding: 0.7em 1em;
+  border: 1px solid lightgray;
+  border-radius: 100px;
+  margin-left: 0.5em;
+  background-color: white;
 }
 
 .comment-input {
