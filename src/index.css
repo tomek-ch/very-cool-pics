@@ -176,6 +176,7 @@ label, .form-error, .input-error-message {
 
 .search-textfield {
   margin-left: 0.5em;
+  flex-grow: 1;
 }
 
 /* .textbox:focus {
@@ -185,6 +186,7 @@ label, .form-error, .input-error-message {
 .user-search-input {
   border-color: lightgray;
   width: 100%;
+  display: flex;
 }
 
 .new-post-form {
