@@ -7,8 +7,10 @@ import Logo from '../components/Logo';
 function SignUp() {
     return (
         <div className="sign-in-up-page">
-            <SignUpForm />
-            <SignInCTA />
+            <div className="form-section">
+                <SignUpForm />
+                <SignInCTA />
+            </div>
         </div>
     );
 }

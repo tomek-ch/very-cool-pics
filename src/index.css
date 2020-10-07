@@ -48,12 +48,17 @@ body {
   justify-content: center;
 }
 
+.form-section {
+  flex-grow: 1;
+}
+
 .sign-in-up-form {
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
   padding: 2em;
   margin-top: 1em;
+  width: 100%;
 }
 
 .sign-in-up-form .logo {
@@ -68,11 +73,10 @@ body {
 }
 
 .sign-in-up-page {
-  width: fit-content;
   margin: auto;
   text-align: center;
-  /* width: 100%; */
-  width: 380px;
+  display: flex;
+  padding: 1em;
 }
 
 label, .form-error, .input-error-message {
