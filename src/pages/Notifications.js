@@ -23,35 +23,36 @@ function Notifications() {
             <Link to={`/${not.username}`}>
                 <ProfilePicture src={not.profilePic} alt={not.username} />
             </Link>
-            <Link
-                to={not.link}
+            <div
                 className="notification-link"
             >
                 {/* {not.text} */}
-                <span className="notification-user">
+                <Link to={`/${not.username}`} className="notification-user">
                     {not.username + ' '}
-                </span>
-                {
-                    not.type === 'like'
-                    ?
-                    'liked your post.'
-                    :
-                    not.type === 'comment'
-                    ?
-                    `commented your post: ${not.commentText}.`
-                    :
-                    'now follows you.'
-                }
-                {
-                    not.postImg
-                    ?
-                    <div className="notification-post-img">
-                        <img src={not.postImg} alt="Your post" />
-                    </div>
-                    :
-                    ''
-                }
-            </Link>
+                </Link>
+                <Link to={not.link} className="notification-text">
+                    {
+                        not.type === 'like'
+                        ?
+                        'liked your post.'
+                        :
+                        not.type === 'comment'
+                        ?
+                        `commented your post: "${not.commentText}".`
+                        :
+                        'now follows you.'
+                    }
+                    {
+                        not.postImg
+                        ?
+                        <div className="notification-post-img">
+                            <img src={not.postImg} alt="Your post" />
+                        </div>
+                        :
+                        ''
+                    }
+                </Link>
+            </div>
         </div>
     )
 );

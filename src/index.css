@@ -273,6 +273,7 @@ label, .form-error, .input-error-message {
   height: 3.5em;
   border-radius: 50%;
   overflow: hidden;
+  background-color: white;
 }
 
 .profile-picture img {
@@ -542,4 +543,10 @@ label, .form-error, .input-error-message {
 .notification-user {
   font-weight: 500;
   white-space: pre-wrap;
+}
+
+.notification-text {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }
