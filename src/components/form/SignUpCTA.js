@@ -5,7 +5,7 @@ function SignUpCTA() {
     return (
         <div className="sign-in-up-cta">
             Don't have an account?{' '}
-            <Link to="/sign-up">
+            <Link to="/sign-up" className="cancel-button">
                 Sign up
             </Link>
         </div>

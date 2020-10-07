@@ -4,6 +4,7 @@ import Form from './Form';
 import EmailInput from './EmailInput';
 import PasswordInput from './PasswordInput';
 import UsernameInput from './UsernameInput';
+import Logo from '../Logo';
 import { auth, db } from '../../firebase';
 
 function SignUpForm() {
@@ -29,10 +30,16 @@ function SignUpForm() {
 
     return (
         <Form submitCallback={signUp}>
+            <Logo />
+            <div className="sign-up-message">
+                Sign up to see some very cool pics.
+            </div>
             <EmailInput />
             <PasswordInput />
             <UsernameInput />
-            <button>Sign up</button>
+            <button className="action-button">
+                Sign up
+            </button>
         </Form>
     );
 }
