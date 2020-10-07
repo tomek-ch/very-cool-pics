@@ -72,6 +72,10 @@ body {
   width: 100%;
 }
 
+.sign-in-up-form input:focus {
+  border: 1px solid gray;
+}
+
 .sign-in-up-page {
   margin: auto;
   text-align: center;
@@ -97,7 +101,7 @@ label, .form-error, .input-error-message {
   margin-top: -0.5em;
 }
 
-input.invalid {
+.sign-in-up-form input.invalid {
   border: 2px solid red;
 }
 
