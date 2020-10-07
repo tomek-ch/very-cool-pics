@@ -500,6 +500,7 @@ label, .form-error, .input-error-message {
   width: 3.5em;
   height: 3.5em;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .notification-post-img img {
@@ -523,4 +524,10 @@ label, .form-error, .input-error-message {
   display: flex;
   justify-content: center;
   margin-top: 8em;
+}
+
+.activity-header {
+  border-bottom: 1px solid lightgray;
+  padding: 1em;
+  margin-bottom: 1em;
 }

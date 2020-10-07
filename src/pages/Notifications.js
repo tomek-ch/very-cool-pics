@@ -44,6 +44,11 @@ function Notifications() {
 
     return (
         <div className="notifications-page">
+            <header className="activity-header">
+                <h2>
+                    Activity
+                </h2>
+            </header>
             {notifications.length ? elements : 'Nothing here yet'}
         </div>
     );
