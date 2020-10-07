@@ -32,8 +32,14 @@ function UserPosts({ userId, setPostCount }) {
     ));
 
     return (
+        posts.length
+        ?
         <div className="user-posts">
-            {posts.length ? postsElements : 'This user hasn\'t posted anything yet'}
+            {postsElements}
+        </div>
+        :
+        <div className="empty-page">
+            This user hasn't posted anything yet.
         </div>
     );
 }

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 function NotFound() {
     return (
-        <div className="not-found-page">
-            Not found
-            <Link to="/" className="go-back-link">
-                Go back
+        <div className="empty-page">
+            Requested page couldn't be found.{' '}
+            <Link to="/" className="go-back-link" className="cancel-button">
+                Go back.
             </Link>
         </div>
     );

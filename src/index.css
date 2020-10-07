@@ -554,3 +554,12 @@ label, .form-error, .input-error-message {
   flex-grow: 1;
   margin-left: 0.5em;
 }
+
+.empty-page {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.notifications-empty {
+  padding: 0.5em 1em;
+}

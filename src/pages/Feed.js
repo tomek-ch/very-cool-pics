@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Context } from '../Context';
 import { db } from '../firebase';
@@ -58,7 +59,22 @@ function Feed() {
     return (
         <div className="feed">
             <Logo />
-            {posts.length ? postElements : isLoading ? <Loading /> : 'Nothing here yet'}
+            {
+                posts.length
+                ?
+                postElements
+                :
+                isLoading
+                ?
+                <Loading />
+                :
+                <div className="empty-page">
+                    Nothing here yet.{' '}
+                    <Link to='/explore' className="cancel-button">
+                        Find something you like.
+                    </Link>
+                </div>
+            }
         </div>
     );
 }

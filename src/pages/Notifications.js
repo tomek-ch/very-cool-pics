@@ -69,7 +69,7 @@ function Notifications() {
                     Activity
                 </h2>
             </header>
-            {notifications.length ? elements : 'Nothing here yet'}
+            {notifications.length ? elements : <div className="notifications-empty">Nothing here yet.</div>}
         </div>
     );
 }
