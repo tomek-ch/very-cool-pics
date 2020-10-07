@@ -28,7 +28,7 @@ function Nav() {
                 </div>
             </Link>
             <Link to={`/${username}`} className="nav-link">
-                {path === `/${username}` ? <i className="ri-user-line"></i> : <i className="ri-user-line"></i>}
+                {path === `/${username}` ? <i className="ri-user-fill"></i> : <i className="ri-user-line"></i>}
             </Link>
         </nav>
     );
