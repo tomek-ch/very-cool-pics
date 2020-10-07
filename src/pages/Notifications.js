@@ -27,21 +27,26 @@ function Notifications() {
                 className="notification-link"
             >
                 {/* {not.text} */}
-                <Link to={`/${not.username}`} className="notification-user">
-                    {not.username + ' '}
-                </Link>
-                <Link to={not.link} className="notification-text">
-                    {
-                        not.type === 'like'
-                        ?
-                        'liked your post.'
-                        :
-                        not.type === 'comment'
-                        ?
-                        `commented your post: "${not.commentText}".`
-                        :
-                        'now follows you.'
-                    }
+                <div>
+                    <Link to={`/${not.username}`} className="notification-user">
+                        {not.username + ' '}
+                    </Link>
+                    <Link to={not.link}>
+                        {
+                            not.type === 'like'
+                            ?
+                            'liked your post.'
+                            :
+                            not.type === 'comment'
+                            ?
+                            `commented your post: "${not.commentText}".`
+                            :
+                            'now follows you.'
+                        }
+                    </Link>
+                </div>
+                
+                <Link to={not.link} className="notification-img-link">
                     {
                         not.postImg
                         ?

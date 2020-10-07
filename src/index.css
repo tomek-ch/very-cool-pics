@@ -545,8 +545,9 @@ label, .form-error, .input-error-message {
   white-space: pre-wrap;
 }
 
-.notification-text {
-  display: flex;
-  align-items: center;
+.notification-img-link {
+  /* display: flex;
+  align-items: center; */
   flex-grow: 1;
+  margin-left: 0.5em;
 }
