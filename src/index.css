@@ -531,3 +531,7 @@ label, .form-error, .input-error-message {
   padding: 1em;
   margin-bottom: 1em;
 }
+
+.activity-header h2 {
+  font-weight: 500;
+}
