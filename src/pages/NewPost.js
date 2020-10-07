@@ -60,9 +60,11 @@ function NewPost() {
 
     return (
         <div className="new-post">
-            <h2>
-                New post
-            </h2>
+            <header className="new-post-header">
+                <h2>
+                    New post
+                </h2>
+            </header>
             <form className="new-post-form" onSubmit={handleSubmit} ref={form}>
                 <button
                     onClick={handleClick}
