@@ -8,6 +8,8 @@ function Nav() {
     const { currentUser: { username }, notifications } = useContext(Context);
     const path = useLocation().pathname;
     
+    const unreadNumber = notifications.filter(not => not.unread).length;
+
     return (
         <nav className="nav-bar">
             <Link to="/" className="nav-link">
@@ -22,9 +24,18 @@ function Nav() {
             <Link to="/notifications" className="nav-link">
                 <div className="notifications-icon">
                     {path === '/notifications' ? <i className="ri-heart-3-fill"></i> : <i className="ri-heart-3-line"></i>}
-                    <div className="notifications-badge">
-                        {notifications.filter(not => not.unread).length}
-                    </div>
+                    {
+
+                    }
+                    {
+                        unreadNumber
+                        ?
+                        <div className="notifications-badge">
+                            {unreadNumber}
+                        </div>
+                        :
+                        ''
+                    }
                 </div>
             </Link>
             <Link to={`/${username}`} className="nav-link">
