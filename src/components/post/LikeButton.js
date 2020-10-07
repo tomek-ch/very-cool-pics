@@ -23,7 +23,8 @@ function LikeButton({ postId, authorId, setLikes, postImg }) {
             if (authorId !== currentUser.id) {
                 author.collection('notifications').add({
                     // link: `/${postId}`,
-                    text: `${username} liked your post`,
+                    // text: `${username} liked your post`,
+                    type: 'like',
                     sender: id,
                     link: `/post/${postId}`,
                     postId,

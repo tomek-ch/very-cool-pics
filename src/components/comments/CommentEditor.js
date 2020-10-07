@@ -34,7 +34,9 @@ function CommentEditor({ postId, post }) {
                 const author = db.collection('Users').doc(post.authorId);
 
                 author.collection('notifications').doc(docId).set({
-                    text: `${username} commented your post: "${comment}"`,
+                    // text: `${username} commented your post: "${comment}"`,
+                    type: 'comment',
+                    commentText: comment,
                     sender: id,
                     link: `/post/${postId}/comments`,
                     postImg: post.imgUrl,

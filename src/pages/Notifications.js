@@ -27,7 +27,21 @@ function Notifications() {
                 to={not.link}
                 className="notification-link"
             >
-                {not.text}
+                {/* {not.text} */}
+                <span className="notification-user">
+                    {not.username + ' '}
+                </span>
+                {
+                    not.type === 'like'
+                    ?
+                    'liked your post.'
+                    :
+                    not.type === 'comment'
+                    ?
+                    `commented your post: ${not.commentText}.`
+                    :
+                    'now follows you.'
+                }
                 {
                     not.postImg
                     ?

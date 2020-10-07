@@ -33,8 +33,9 @@ function FollowButton({ idToFollow, isUserFollowed }) {
             userToFollow.update({ followers: FieldValue.arrayUnion(id) });
 
             userToFollow.collection('notifications').doc(id).set({
-                    text: `${username} started following you.`,
+                    // text: `${username} started following you.`,
                     // sender: id,
+                    type: 'follow',
                     link: `/${username}`,
                     username,
                     profilePic: profilePic || '',
