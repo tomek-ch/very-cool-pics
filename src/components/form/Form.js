@@ -7,7 +7,7 @@ function Form({ submitCallback, children }) {
             valid: false,
             value: '',
             blurred: false,
-            error: 'Please enter your email address.',
+            error: 'Please enter an email address.',
         },
         username: {
             valid: false,
@@ -19,14 +19,14 @@ function Form({ submitCallback, children }) {
             valid: false,
             value: '',
             blurred: false,
-            error: 'Please enter your password.',
+            error: 'Please enter a password.',
         },
     });
 
     const getError = (type, value) => {
         if (type === 'email') {
             if (!value.length) {
-                return 'Please enter your email address.';
+                return 'Please enter an email address.';
             }
             if (!/\S+@\S+\.\S+/.test(value)) {
                 return 'Email address invalid.';
@@ -34,7 +34,7 @@ function Form({ submitCallback, children }) {
             return '';
         } else if (type === 'password') {
             if (!value.length) {
-                return 'Please enter your password.';
+                return 'Please enter a password.';
             }
             if (value.length < 6) {
                 return 'Password must be at least 6 characters long.';
