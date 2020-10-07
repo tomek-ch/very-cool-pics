@@ -497,8 +497,8 @@ label, .form-error, .input-error-message {
 }
 
 .notification-post-img {
-  width: 3.5em;
-  height: 3.5em;
+  width: 2.5em;
+  height: 2.5em;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -513,11 +513,13 @@ label, .form-error, .input-error-message {
   justify-content: space-between;
   margin-left: 0.5em;
   align-items: center;
+  border-bottom: 1px solid lightgray;
+  padding: 0.7em 0;
 }
 
 .notification .profile-picture {
-  width: 3.5em;
-  height: 3.5em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .loading-page {
