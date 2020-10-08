@@ -55,6 +55,11 @@ body {
   margin-right: 0.2em;
 }
 
+.feed .logo {
+  border-bottom: 1px solid lightgray;
+  padding: 0.5em 0;
+}
+
 .form-section {
   flex-grow: 1;
 }
