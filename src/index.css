@@ -46,7 +46,13 @@ body {
 .logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 1em;
+  align-items: center;
+  margin-bottom: 0.75em;
+  font-weight: 500;
+}
+
+.logo i {
+  margin-right: 0.2em;
 }
 
 .form-section {
