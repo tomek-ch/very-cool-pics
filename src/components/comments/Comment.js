@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import DeleteCommentButton from './DeleteCommentButton';
 import { Context } from '../../Context';
 import ProfilePicture from '../ProfilePicture';
+import Time from '../Time';
 
-function Comment({ profilePic, username, text, id, post }) {
+function Comment({ profilePic, username, text, id, post, timestamp }) {
     const { currentUser } = useContext(Context);
     const isThisCurrentUsersComment = currentUser.username === username;
-
+    
     return (
         <div className="comment">
             <Link to={`/${username}`}>
@@ -23,6 +24,7 @@ function Comment({ profilePic, username, text, id, post }) {
                 <span className="comment-text">
                     {text}
                 </span>
+                {timestamp ? <Time time={timestamp.toDate()} /> : ''}
             </div>
             {
                 isThisCurrentUsersComment
