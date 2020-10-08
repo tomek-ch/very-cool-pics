@@ -23,7 +23,11 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
                         {authorUsername}
                     </div>
                 </Link>
-                {isThisCurrentUsersPost ? <DeletePostButton postId={postId} handleDelete={handleDelete} /> : ''}
+                {isThisCurrentUsersPost
+                ?
+                <DeletePostButton postId={postId} handleDelete={handleDelete} authorId={authorId} />
+                :
+                ''}
             </div>
             <div className="post-image">
                 <div className="post-image-inner" style={{backgroundImage: `url(${imgUrl})`}}></div>

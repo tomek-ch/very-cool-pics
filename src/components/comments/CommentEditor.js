@@ -38,6 +38,7 @@ function CommentEditor({ postId, post }) {
                     type: 'comment',
                     commentText: comment,
                     sender: id,
+                    postId,
                     link: `/post/${postId}/comments`,
                     postImg: post.imgUrl,
                     username,
