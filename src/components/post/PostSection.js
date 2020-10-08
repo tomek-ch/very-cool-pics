@@ -14,6 +14,14 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
 
     const [displayedLikes, setDisplayedLikes] = useState(likes);
     
+    const incrementLikes = () => {
+        setDisplayedLikes(prev => prev + 1);
+    };
+    
+    const decrementLikes = () => {
+        setDisplayedLikes(prev => prev - 1);
+    };
+
     return (
         <div className="post">
             <div className="post-top">
@@ -34,7 +42,13 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
             </div>
             <div className="post-bottom">
                 <div className="likes-and-comments">
-                    <LikeButton postId={postId} authorId={authorId} setLikes={setDisplayedLikes} postImg={imgUrl} />
+                    <LikeButton
+                        postId={postId}
+                        authorId={authorId}
+                        incrementLikes={incrementLikes}
+                        decrementLikes={decrementLikes}
+                        postImg={imgUrl}
+                    />
                     <CommentsLink postId={postId} />
                 </div>
                 <div className="number-of-likes">

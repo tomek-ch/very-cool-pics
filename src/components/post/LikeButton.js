@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { db, FieldValue } from '../../firebase';
 import { Context } from '../../Context';
 
-function LikeButton({ postId, authorId, setLikes, postImg }) {
+function LikeButton({ postId, authorId, incrementLikes, decrementLikes, postImg }) {
 
     const { currentUser: { id, likedPosts, username, profilePic } } = useContext(Context);
     // const [ isLiked, setIsLiked ] = useState(likedPosts.includes(postId));
@@ -18,7 +18,7 @@ function LikeButton({ postId, authorId, setLikes, postImg }) {
             currentUser.update({ likedPosts: FieldValue.arrayUnion(postId) });
             post.update({ likes: FieldValue.increment(1) });
             // setIsLiked(true);
-            setLikes(prev => prev || 0 + 1);
+            incrementLikes();
 
             if (authorId !== currentUser.id) {
                 author.collection('notifications').add({
@@ -40,7 +40,7 @@ function LikeButton({ postId, authorId, setLikes, postImg }) {
             currentUser.update({ likedPosts: FieldValue.arrayRemove(postId) });
             post.update({ likes: FieldValue.increment(-1) });
             // setIsLiked(false);
-            setLikes(prev => prev - 1);
+            decrementLikes();
 
             if (authorId !== currentUser.id) {
                 author.collection('notifications')
