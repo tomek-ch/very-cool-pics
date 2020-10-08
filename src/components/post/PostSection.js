@@ -15,7 +15,7 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
     const [displayedLikes, setDisplayedLikes] = useState(likes);
     
     const incrementLikes = () => {
-        setDisplayedLikes(prev => prev + 1);
+        setDisplayedLikes(prev => prev || 0 + 1);
     };
     
     const decrementLikes = () => {
