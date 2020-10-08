@@ -566,5 +566,6 @@ label, .form-error, .input-error-message {
 
 .time {
   font-size: 0.75em;
+  line-height: 2em;
   color: gray;
 }
