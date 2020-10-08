@@ -8,7 +8,10 @@ function UserPosts({ userId, setPostCount }) {
 
     useEffect(() => {
         if (userId) {
-            db.collection('Posts').where('authorId', '==', userId).get().then(snapshot => {
+            db.collection('Posts')
+            .where('authorId', '==', userId)
+            .orderBy('timestamp', 'desc')
+            .get().then(snapshot => {
                 const postsArr = [];
                 snapshot.forEach(post => postsArr.push({
                     imgUrl: post.data().imgUrl,
