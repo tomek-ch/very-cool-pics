@@ -5,7 +5,7 @@ function NotFound() {
     return (
         <div className="empty-page">
             Requested page couldn't be found.{' '}
-            <Link to="/" className="go-back-link" className="cancel-button">
+            <Link to="/" className="cancel-button">
                 Go back.
             </Link>
         </div>
