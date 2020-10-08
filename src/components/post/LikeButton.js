@@ -18,7 +18,7 @@ function LikeButton({ postId, authorId, setLikes, postImg }) {
             currentUser.update({ likedPosts: FieldValue.arrayUnion(postId) });
             post.update({ likes: FieldValue.increment(1) });
             // setIsLiked(true);
-            setLikes(prev => prev + 1);
+            setLikes(prev => prev || 0 + 1);
 
             if (authorId !== currentUser.id) {
                 author.collection('notifications').add({
