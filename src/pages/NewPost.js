@@ -33,7 +33,7 @@ function NewPost() {
                 caption: text,
                 authorId: id,
                 authorUsername: username,
-                authorProfilePic: profilePic,
+                authorProfilePic: profilePic || '',
             }).then(() => history.push('/'));
 
         }
