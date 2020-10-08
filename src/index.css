@@ -563,3 +563,8 @@ label, .form-error, .input-error-message {
 .notifications-empty {
   padding: 0.5em 1em;
 }
+
+.time {
+  font-size: 0.75em;
+  color: gray;
+}

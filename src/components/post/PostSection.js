@@ -6,8 +6,9 @@ import LikeButton from './LikeButton';
 import CommentsLink from './CommentsLink';
 import { Context } from '../../Context';
 import ProfilePicture from '../ProfilePicture';
+import Time from '../Time';
 
-function PostSection({ handleDelete, postId, post: { authorUsername, authorProfilePic, imgUrl, caption, likes, authorId } }) {
+function PostSection({ handleDelete, postId, post: { authorUsername, authorProfilePic, imgUrl, caption, likes, authorId, timestamp } }) {
     const { currentUser } = useContext(Context);
     const isThisCurrentUsersPost = currentUser.username === authorUsername;
 
@@ -38,6 +39,7 @@ function PostSection({ handleDelete, postId, post: { authorUsername, authorProfi
                 <div className="post-caption">
                     {caption}
                 </div>
+                <Time time={timestamp.toDate()} />
             </div>
         </div>
     );

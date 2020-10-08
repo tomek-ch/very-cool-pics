@@ -34,9 +34,8 @@ function NewPost() {
                 authorId: id,
                 authorUsername: username,
                 authorProfilePic: profilePic,
-            });
+            }).then(() => history.push('/'));
 
-            history.push('/');
         }
     };
 
