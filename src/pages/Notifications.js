@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ProfilePicture from '../components/ProfilePicture';
 
+import ProfilePicture from '../components/ProfilePicture';
+import Time from '../components/Time';
 import { Context } from '../Context';
 import { db } from '../firebase';
 
@@ -43,6 +44,8 @@ function Notifications() {
                             :
                             'now follows you.'
                         }
+                        
+                        {not.timestamp ? <Time time={not.timestamp.toDate()} /> : ''}
                     </Link>
                 </div>
                 
