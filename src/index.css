@@ -60,16 +60,6 @@ body {
   padding: 0.5em 0;
 }
 
-.form-section {
-  /* flex-grow: 1; */
-  width: 50%;
-}
-
-.product-image {
-  /* flex-shrink: 1; */
-  width: 50%;
-}
-
 .product-image img {
   width: 100%;
 }
@@ -95,9 +85,10 @@ body {
 }
 
 .sign-in-up-page {
+  display: flex;
+  flex-direction: column-reverse;
   margin: auto;
   text-align: center;
-  display: flex;
   padding: 1em;
 }
 
@@ -605,5 +596,18 @@ label, .form-error, .input-error-message {
 
   .explore-grid, .user-posts {
     grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
+
+  .sign-in-up-page {
+    flex-direction: row;
+  }
+
+  .form-section {
+    /* flex-grow: 1; */
+    width: 50%;
+  }
+
+  .product-image {
+    width: 50%;
   }
 }
