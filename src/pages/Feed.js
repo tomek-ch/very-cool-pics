@@ -57,25 +57,27 @@ function Feed() {
     ));
 
     return (
-        <div className="feed">
+        <main className="feed-page">
             <Logo />
-            {
-                posts.length
-                ?
-                postElements
-                :
-                isLoading
-                ?
-                <Loading />
-                :
-                <div className="empty-page">
-                    Nothing here yet.{' '}
-                    <Link to='/explore' className="cancel-button">
-                        Find something you like.
-                    </Link>
-                </div>
-            }
-        </div>
+            <div className="feed">
+                {
+                    posts.length
+                    ?
+                    postElements
+                    :
+                    isLoading
+                    ?
+                    <Loading />
+                    :
+                    <div className="empty-page">
+                        Nothing here yet.{' '}
+                        <Link to='/explore' className="cancel-button">
+                            Find something you like.
+                        </Link>
+                    </div>
+                }
+            </div>
+        </main>
     );
 }
 

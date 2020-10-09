@@ -1,6 +1,6 @@
 import React from 'react';
 
-import user from '../icons/user-line.svg';
+import user from '../images/user-line.svg';
 
 function ProfilePicture({ src, alt }) {
     return (

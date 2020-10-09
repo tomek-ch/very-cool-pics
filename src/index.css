@@ -37,7 +37,7 @@ body {
 }
 
 .app-container {
-  max-width: 500px;
+  /* max-width: 1000px; */
   margin: auto;
   position: relative;
   padding-bottom: 4em;
@@ -55,13 +55,23 @@ body {
   margin-right: 0.2em;
 }
 
-.feed .logo {
+.feed-page .logo {
   border-bottom: 1px solid lightgray;
   padding: 0.5em 0;
 }
 
 .form-section {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  width: 50%;
+}
+
+.product-image {
+  /* flex-shrink: 1; */
+  width: 50%;
+}
+
+.product-image img {
+  width: 100%;
 }
 
 .sign-in-up-form {
@@ -72,6 +82,7 @@ body {
   margin-top: 1em;
   width: 100%;
 }
+
 .sign-in-up-form input {
   border: 1px solid lightgray;
   padding: 0.5em;
@@ -328,6 +339,8 @@ label, .form-error, .input-error-message {
 
 .post {
   width: 100%;
+  max-width: 500px;
+  margin: auto;
 }
 
 .post-image {
@@ -360,7 +373,6 @@ label, .form-error, .input-error-message {
   display: grid;
   grid-gap: 0.2em;
   grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-  grid-auto-rows: 1fr;
   grid-auto-flow: dense;
 }
 
@@ -580,4 +592,18 @@ label, .form-error, .input-error-message {
   font-size: 0.75em;
   line-height: 2em;
   color: gray;
+}
+
+@media (min-width: 1000px) {
+  .feed {
+    column-width: 20em;
+  }
+
+  .feed-page .post {
+    display: inline-block;
+  }
+
+  .explore-grid, .user-posts {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
 }
