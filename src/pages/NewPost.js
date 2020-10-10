@@ -90,9 +90,15 @@ function NewPost() {
                     Add new post
                 </button>
             </form>
-            <div className="post-image post-preview">
-                <div className="post-image-inner" style={{backgroundImage: `url(${previewImgUrl})`}}></div>
-            </div>
+            {
+                previewImgUrl
+                ?
+                <div className="post-image post-preview">
+                    <div className="post-image-inner" style={{backgroundImage: `url(${previewImgUrl})`}}></div>
+                </div>
+                :
+                ''
+            }
         </div>
     );
 }
