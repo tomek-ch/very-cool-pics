@@ -60,6 +60,11 @@ body {
   padding: 0.5em 0;
 }
 
+.product-image {
+  max-width: 250px;
+  margin: auto;
+}
+
 .product-image img {
   width: 100%;
 }
@@ -67,6 +72,7 @@ body {
 .form-section {
   max-width: 400px;
   margin: auto;
+  flex-grow: 1;
 }
 
 .sign-in-up-form {
@@ -605,14 +611,18 @@ label, .form-error, .input-error-message {
 
   .sign-in-up-page {
     flex-direction: row;
+    margin: auto;
+    width: fit-content;
   }
 
   .form-section {
     /* flex-grow: 1; */
     width: 50%;
+    margin: 0;
   }
 
   .product-image {
-    width: 50%;
+    width: fit-content;
+    margin-right: 1.5em;
   }
 }

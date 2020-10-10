@@ -1,6 +1,6 @@
 import React from 'react';
 
-import image from '../../images/app-screenshot.png';
+import image from '../../images/feed-cropped.png';
 
 function ProductImage() {
     return (
