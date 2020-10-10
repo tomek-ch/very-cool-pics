@@ -36,7 +36,7 @@ function Feed() {
 
         // return unsubscribe;
         ref.get().then(snapshot => {
-            console.log('get')
+            // console.log('get')
             const postsArr = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
             setPosts(postsArr);
             setIsLoading(false);
