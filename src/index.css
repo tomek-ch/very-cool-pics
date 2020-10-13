@@ -83,6 +83,7 @@ body {
   padding: 2em;
   margin-top: 1em;
   width: 100%;
+  border-radius: 5px;
 }
 
 .sign-in-up-form input {
@@ -90,6 +91,7 @@ body {
   padding: 0.5em;
   margin: 0.5em 0;
   width: 100%;
+  border-radius: 5px;
 }
 
 .sign-in-up-form input:focus {
@@ -112,6 +114,7 @@ label, .form-error, .input-error-message {
   border: 1px solid lightgray;
   padding: 2em;
   margin-top: 1em;
+  border-radius: 5px;
 }
 
 .sign-up-message {
