@@ -16,6 +16,7 @@ function SearchUsersInput({ text, setText }) {
                 placeholder="Search"
                 className="search-textfield"
                 spellCheck="false"
+                autoCapitalize="none"
             />
         </div>
     );
