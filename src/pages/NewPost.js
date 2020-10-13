@@ -84,6 +84,7 @@ function NewPost() {
                     onChange={handleChange}
                     className="caption-input textbox"
                     placeholder="Post caption"
+                    spellCheck="false"
                 />
                 <button className="add-post-button action-button">
                     Add new post

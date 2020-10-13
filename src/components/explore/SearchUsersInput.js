@@ -15,6 +15,7 @@ function SearchUsersInput({ text, setText }) {
                 onChange={handleChange}
                 placeholder="Search"
                 className="search-textfield"
+                spellCheck="false"
             />
         </div>
     );

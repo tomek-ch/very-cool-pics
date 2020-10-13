@@ -120,6 +120,7 @@ function Form({ submitCallback, children }) {
             className="sign-in-up-form"
             onSubmit={handleSubmit}
             noValidate
+            spellCheck="false"
         >
             {children.map((child) => (
                     typeof child.type !== 'string' ?

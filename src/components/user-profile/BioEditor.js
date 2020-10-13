@@ -44,6 +44,7 @@ function BioEditor({ text, userId }) {
                     value={value}
                     onChange={handleChange}
                     className="bio-textbox textbox"
+                    spellCheck="false"
                 />
                 <div className="bio-editor-buttons">
                     <button
