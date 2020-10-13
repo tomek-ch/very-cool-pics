@@ -21,7 +21,7 @@ function SearchResults({ searchedText }) {
         return [];
     };
 
-    const [ results, setResults] = useState([]);
+    const [ results, setResults ] = useState([]);
 
     useEffect(() => {
         setIsLoading(true);
