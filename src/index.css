@@ -465,6 +465,8 @@ label, .form-error, .input-error-message {
 .comments-header {
   display: flex;
   padding: 0.5em 1em;
+  max-width: 700px;
+  margin: auto;
 }
 
 .comments-header i {
@@ -484,6 +486,8 @@ label, .form-error, .input-error-message {
   background-color: WhiteSmoke;
   padding: 0.5em 1em;
   border: 1px solid lightgray;
+  max-width: 700px;
+  margin: auto;
   /* border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray; */
 }
@@ -502,6 +506,9 @@ label, .form-error, .input-error-message {
 .comment {
   display: flex;
   margin: 1em;
+  max-width: 700px;
+  padding: 0.5em 1em;
+  margin: auto;
 }
 
 .comment .profile-picture {
