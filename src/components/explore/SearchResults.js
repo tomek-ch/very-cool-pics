@@ -9,8 +9,8 @@ function SearchResults({ searchedText }) {
         if (text) {
             const users = await db.collection('Users')
                 .orderBy('username')
-                .startAt(text)
-                .endAt(text + '\uf8ff')
+                .startAt(text.toLowerCase())
+                .endAt(text.toLowerCase() + '\uf8ff')
                 .get();
 
             return users.docs;
