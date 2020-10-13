@@ -25,6 +25,10 @@ html {
   height: 100%;
 }
 
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -33,7 +37,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
-  /* height: 100%; */
+  height: 100%;
 }
 
 .app-container {
@@ -41,6 +45,7 @@ body {
   margin: auto;
   position: relative;
   padding-bottom: 4em;
+  height: 100%;
 }
 
 .logo {
@@ -100,10 +105,12 @@ body {
 
 .sign-in-up-page {
   display: flex;
-  flex-direction: column-reverse;
+  /* flex-direction: column-reverse; */
   margin: auto;
   text-align: center;
   padding: 1em;
+  height: 100%;
+  align-items: center;
 }
 
 label, .form-error, .input-error-message {
@@ -632,7 +639,7 @@ label, .form-error, .input-error-message {
   }
 
   .sign-in-up-page {
-    flex-direction: row;
+    /* flex-direction: row; */
     margin: auto;
     width: fit-content;
   }
