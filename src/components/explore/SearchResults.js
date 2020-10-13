@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import { db } from '../../firebase';
 import SearchResult from './SearchResult';
+import Loading from '../Loading';
 
 function SearchResults({ searchedText }) {
+
+    const [ isLoading, setIsLoading ] = useState(true);
 
     const getSearchResults = async text => {
         if (text) {
@@ -21,6 +24,8 @@ function SearchResults({ searchedText }) {
     const [ results, setResults] = useState([]);
 
     useEffect(() => {
+        setIsLoading(true);
+
         getSearchResults(searchedText).then(users => {
             const resultsElements = [];
 
@@ -36,15 +41,25 @@ function SearchResults({ searchedText }) {
             }
 
             setResults(resultsElements);
+            setIsLoading(false);
         });
     }, [searchedText]);
 
 
 
     return (
+        isLoading
+        ?
+        <Loading />
+        :
+        results.length
+        ?
         <div className="search-results">
             {results}
-            {!results.length ? 'Nothing found' : ''}
+        </div>
+        :
+        <div className="empty-page">
+            Nothing found
         </div>
     );
 }
