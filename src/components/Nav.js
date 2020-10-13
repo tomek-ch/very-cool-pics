@@ -16,7 +16,7 @@ function Nav() {
                 {path === '/' ? <i className="ri-home-2-fill"></i> : <i className="ri-home-2-line"></i>}
             </Link>
             <Link to="/explore" className="nav-link">
-                {path === '/explore' ? <i className="ri-search-fill"></i> : <i className="ri-search-line"></i>}
+                {path === '/explore' ? <i class="ri-compass-3-fill"></i> : <i class="ri-compass-3-line"></i>}
             </Link>
             <Link to="/new-post" className="nav-link">
                 {path === '/new-post' ? <i className="ri-add-box-fill"></i> : <i className="ri-add-box-line"></i>}
