@@ -216,6 +216,14 @@ label, .form-error, .input-error-message {
 
 .new-post-form {
   padding: 0 1em;
+  max-width: 700px;
+  margin: auto;
+}
+
+.post-preview {
+  max-width: calc(700px - 2em);
+  margin: auto;
+  /* margin-left: 1em; */
 }
 
 .new-post-header {
@@ -226,6 +234,8 @@ label, .form-error, .input-error-message {
 
 .new-post-header h2 {
   font-weight: 500;
+  margin: auto;
+  max-width: calc(700px - 1em);
 }
 
 .change-new-post-image {
@@ -526,7 +536,9 @@ label, .form-error, .input-error-message {
 .notification {
   display: flex;
   align-items: center;
-  margin: 0.5em 1em;
+  max-width: 700px;
+  padding: 0 0.5em;
+  margin: 1em auto;
 }
 
 .notification-post-img {
@@ -570,6 +582,8 @@ label, .form-error, .input-error-message {
 
 .activity-header h2 {
   font-weight: 500;
+  max-width: calc(700px - 1em);
+  margin: auto;
 }
 
 .notification-user {
