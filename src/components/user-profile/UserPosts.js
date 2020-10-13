@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { db } from '../../firebase';
+import Loading from '../Loading';
 
 function UserPosts({ userId, setPostCount }) {
     const [ posts, setPosts ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(true);
 
     useEffect(() => {
         if (userId) {
@@ -20,6 +22,7 @@ function UserPosts({ userId, setPostCount }) {
                 }));
                 setPosts(postsArr);
                 setPostCount(postsArr.length);
+                setIsLoading(false);
             });
         }
         
@@ -35,6 +38,10 @@ function UserPosts({ userId, setPostCount }) {
     ));
 
     return (
+        isLoading
+        ?
+        <Loading />
+        :
         posts.length
         ?
         <div className="user-posts">
