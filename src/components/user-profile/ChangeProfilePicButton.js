@@ -37,7 +37,6 @@ function ChangeProfilePicButton({ userId }) {
             <input
                 type="file"
                 accept="image/*"
-                capture="camera"
                 className="image-input"
                 onChange={onMediaFileSelected}
                 ref={fileInput}
