@@ -11,5 +11,6 @@ A social network where users can:
 - View posts of followed users on their feed
 - Like and comment posts
 - Receive notifications about likes, comments and follows
+You can play around with it [here](https://very-cool-pics.web.app).
 
 ![Feed on desktop](/screenshots/desktop.png)
