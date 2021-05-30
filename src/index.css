@@ -152,12 +152,12 @@ label, .form-error, .input-error-message {
   position: fixed;
   bottom: 0;
   border-top: 1px solid lightgray;
+  background-color: white;
 }
 
 .nav-inner {
   display: flex;
   justify-content: space-between;
-  background-color: white;
   max-width: 700px;
   padding: 0.5em 1em;
   margin: auto;
