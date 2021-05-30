@@ -188,6 +188,8 @@ label, .form-error, .input-error-message {
 
 .profile-top {
   padding: 1em;
+  max-width: 700px;
+  margin: auto;
 }
 
 .user-info {
@@ -354,12 +356,17 @@ label, .form-error, .input-error-message {
 }
 
 .followers-section {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
   margin: 0.2em 0;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+}
+
+.followers-section-inner {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
   padding: 0.5em 1em;
 }
 

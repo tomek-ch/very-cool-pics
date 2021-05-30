@@ -7,28 +7,30 @@ function FollowersSection({ postCount, followers, following }) {
 
     return (
         <div className="followers-section">
-            <div className="post-count">
-                <div className="count">
-                    {postCount}
+            <div className="followers-section-inner">
+                <div className="post-count">
+                    <div className="count">
+                        {postCount}
+                    </div>
+                    <div>
+                        {postCount === 1 ? 'post' : 'posts'}
+                    </div>
                 </div>
-                <div>
-                    { postCount === 1 ? 'post' : 'posts'}
+                <div className="followers-count">
+                    <div className="count">
+                        {followerCount}
+                    </div>
+                    <div>
+                        {followerCount === 1 ? 'follower' : 'followers'}
+                    </div>
                 </div>
-            </div>
-            <div className="followers-count">
-                <div className="count">
-                    {followerCount}
+                <div className="following-count">
+                    <div className="count">
+                        {followingCount}
+                    </div>
+                    <div>
+                        following
                 </div>
-                <div>
-                    {followerCount === 1 ? 'follower' : 'followers'}
-                </div>
-            </div>
-            <div className="following-count">
-                <div className="count">
-                    {followingCount}
-                </div>
-                <div>
-                    following
                 </div>
             </div>
         </div>

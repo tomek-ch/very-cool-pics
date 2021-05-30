@@ -7,7 +7,7 @@ import ProfilePicture from '../ProfilePicture';
 
 function UserInfo({ isThisCurrentUsersProfile, isUserFollowed, username, pic, bio, userId }) {
     return (
-        <>
+        <div className="user-top-container">
             <div className="user-info">
                 <ProfilePicture src={pic} alt={username} />
                 <div className="info-username">
@@ -23,7 +23,7 @@ function UserInfo({ isThisCurrentUsersProfile, isUserFollowed, username, pic, bi
                 idToFollow={userId}
                 isUserFollowed={isUserFollowed}
             />}
-        </>
+        </div>
     );
 }
 
