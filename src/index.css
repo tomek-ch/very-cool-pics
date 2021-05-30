@@ -148,15 +148,19 @@ label, .form-error, .input-error-message {
 }
 
 .nav-bar {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: white;
-  width: 100%;
-  max-width: inherit;
-  padding: 0.5em 1em;
   border-top: 1px solid lightgray;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  max-width: 700px;
+  padding: 0.5em 1em;
+  margin: auto;
 }
 
 .nav-link {
